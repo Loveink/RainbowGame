@@ -43,6 +43,116 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57A8F2A82B01528000BCFD61 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				57BE15632B011544001FA77E /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		57A8F2A92B01528A00BCFD61 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		57A8F2AA2B01529500BCFD61 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		57A8F2AB2B0152B000BCFD61 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				57BE15772B011626001FA77E /* GameViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		57A8F2AC2B0152B800BCFD61 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		57A8F2AD2B0152BD00BCFD61 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		57A8F2AE2B0152C700BCFD61 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				57BE15802B01168B001FA77E /* RulesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		57A8F2AF2B0152CE00BCFD61 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		57A8F2B02B0152D200BCFD61 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		57A8F2B12B0152DC00BCFD61 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				57BE157E2B01167A001FA77E /* ResultsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		57A8F2B22B0152E400BCFD61 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		57A8F2B32B0152E800BCFD61 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		57A8F2B42B0152F200BCFD61 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				57BE157C2B01166A001FA77E /* SettingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		57A8F2B52B0152F800BCFD61 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		57A8F2B62B0152FC00BCFD61 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		57BE15532B011544001FA77E = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +205,9 @@
 		57BE15752B0115F5001FA77E /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				57BE15632B011544001FA77E /* MainViewController.swift */,
+				57A8F2A92B01528A00BCFD61 /* Models */,
+				57A8F2AA2B01529500BCFD61 /* Views */,
+				57A8F2A82B01528000BCFD61 /* Controllers */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -103,7 +215,9 @@
 		57BE15762B011602001FA77E /* GameScreen */ = {
 			isa = PBXGroup;
 			children = (
-				57BE15772B011626001FA77E /* GameViewController.swift */,
+				57A8F2AD2B0152BD00BCFD61 /* Models */,
+				57A8F2AC2B0152B800BCFD61 /* Views */,
+				57A8F2AB2B0152B000BCFD61 /* Controllers */,
 			);
 			path = GameScreen;
 			sourceTree = "<group>";
@@ -111,7 +225,9 @@
 		57BE15792B01162D001FA77E /* RulesScreen */ = {
 			isa = PBXGroup;
 			children = (
-				57BE15802B01168B001FA77E /* RulesViewController.swift */,
+				57A8F2B02B0152D200BCFD61 /* Models */,
+				57A8F2AF2B0152CE00BCFD61 /* Views */,
+				57A8F2AE2B0152C700BCFD61 /* Controllers */,
 			);
 			path = RulesScreen;
 			sourceTree = "<group>";
@@ -119,7 +235,9 @@
 		57BE157A2B01163A001FA77E /* ResultsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				57BE157E2B01167A001FA77E /* ResultsViewController.swift */,
+				57A8F2B32B0152E800BCFD61 /* Models */,
+				57A8F2B22B0152E400BCFD61 /* Views */,
+				57A8F2B12B0152DC00BCFD61 /* Controllers */,
 			);
 			path = ResultsScreen;
 			sourceTree = "<group>";
@@ -127,7 +245,9 @@
 		57BE157B2B011645001FA77E /* SettingsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				57BE157C2B01166A001FA77E /* SettingsViewController.swift */,
+				57A8F2B62B0152FC00BCFD61 /* Models */,
+				57A8F2B52B0152F800BCFD61 /* Views */,
+				57A8F2B42B0152F200BCFD61 /* Controllers */,
 			);
 			path = SettingsScreen;
 			sourceTree = "<group>";
@@ -167,7 +287,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 57BE15572B011544001FA77E /* Build configuration list for PBXProject "RainbowGame 21.06.10" */;
+			buildConfigurationList = 57BE15572B011544001FA77E /* Build configuration list for PBXProject "RainbowGame" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -410,7 +530,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		57BE15572B011544001FA77E /* Build configuration list for PBXProject "RainbowGame 21.06.10" */ = {
+		57BE15572B011544001FA77E /* Build configuration list for PBXProject "RainbowGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				57BE156E2B011547001FA77E /* Debug */,
