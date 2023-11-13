@@ -16,6 +16,9 @@
 		57BE157D2B01166A001FA77E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE157C2B01166A001FA77E /* SettingsViewController.swift */; };
 		57BE157F2B01167A001FA77E /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE157E2B01167A001FA77E /* ResultsViewController.swift */; };
 		57BE15812B01168B001FA77E /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE15802B01168B001FA77E /* RulesViewController.swift */; };
+		770AD2612B026ACA00150DCF /* RainbowNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AD2602B026ACA00150DCF /* RainbowNavigationController.swift */; };
+		770AD2642B026B8200150DCF /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AD2632B026B8200150DCF /* Images.swift */; };
+		770AD2662B026F0700150DCF /* RainbowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AD2652B026F0700150DCF /* RainbowViewController.swift */; };
 		774CD77C2B016CB0007284AE /* GameScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD77B2B016CB0007284AE /* GameScreenPresenter.swift */; };
 		774CD77E2B016CB5007284AE /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD77D2B016CB5007284AE /* GameScreen.swift */; };
 		774CD7802B016D1F007284AE /* GameScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD77F2B016D1F007284AE /* GameScreenProtocols.swift */; };
@@ -40,6 +43,9 @@
 		57BE157E2B01167A001FA77E /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		57BE15802B01168B001FA77E /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		57D927662B014AC400904463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		770AD2602B026ACA00150DCF /* RainbowNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowNavigationController.swift; sourceTree = "<group>"; };
+		770AD2632B026B8200150DCF /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		770AD2652B026F0700150DCF /* RainbowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowViewController.swift; sourceTree = "<group>"; };
 		774CD77B2B016CB0007284AE /* GameScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenPresenter.swift; sourceTree = "<group>"; };
 		774CD77D2B016CB5007284AE /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
 		774CD77F2B016D1F007284AE /* GameScreenProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenProtocols.swift; sourceTree = "<group>"; };
@@ -179,6 +185,7 @@
 				57BE157B2B011645001FA77E /* SettingsScreen */,
 				774CD7912B017DDC007284AE /* Extensions */,
 				57BE15742B0115D8001FA77E /* Resourses */,
+				770AD2622B026AE000150DCF /* Base */,
 			);
 			path = RainbowGame;
 			sourceTree = "<group>";
@@ -200,6 +207,7 @@
 				57BE156A2B011547001FA77E /* LaunchScreen.storyboard */,
 				774CD7832B016F2F007284AE /* Colors.swift */,
 				774CD78D2B017C5E007284AE /* Fonts.swift */,
+				770AD2632B026B8200150DCF /* Images.swift */,
 			);
 			path = Resourses;
 			sourceTree = "<group>";
@@ -255,6 +263,15 @@
 				57A8F2B42B0152F200BCFD61 /* Controllers */,
 			);
 			path = SettingsScreen;
+			sourceTree = "<group>";
+		};
+		770AD2622B026AE000150DCF /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				770AD2602B026ACA00150DCF /* RainbowNavigationController.swift */,
+				770AD2652B026F0700150DCF /* RainbowViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		774CD7872B016FE3007284AE /* Views */ = {
@@ -358,11 +375,14 @@
 				57BE15782B011626001FA77E /* GameScreenViewController.swift in Sources */,
 				774CD77C2B016CB0007284AE /* GameScreenPresenter.swift in Sources */,
 				774CD7902B017DC4007284AE /* UIApplication+Extension.swift in Sources */,
+				770AD2612B026ACA00150DCF /* RainbowNavigationController.swift in Sources */,
 				57BE15642B011544001FA77E /* MainViewController.swift in Sources */,
+				770AD2662B026F0700150DCF /* RainbowViewController.swift in Sources */,
 				774CD77E2B016CB5007284AE /* GameScreen.swift in Sources */,
 				57BE15602B011544001FA77E /* AppDelegate.swift in Sources */,
 				57BE157D2B01166A001FA77E /* SettingsViewController.swift in Sources */,
 				774CD7802B016D1F007284AE /* GameScreenProtocols.swift in Sources */,
+				770AD2642B026B8200150DCF /* Images.swift in Sources */,
 				57BE15622B011544001FA77E /* SceneDelegate.swift in Sources */,
 				57BE157F2B01167A001FA77E /* ResultsViewController.swift in Sources */,
 			);

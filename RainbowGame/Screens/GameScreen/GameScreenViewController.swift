@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class GameScreenViewController: UIViewController, GameScreenInput {
+final class GameScreenViewController: RainbowViewController, GameScreenInput {
     
     enum Layout {
         static let colorViewSize: CGSize = .init(width: 205, height: 40)
