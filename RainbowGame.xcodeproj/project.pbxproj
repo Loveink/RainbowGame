@@ -12,10 +12,20 @@
 		57BE15642B011544001FA77E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE15632B011544001FA77E /* MainViewController.swift */; };
 		57BE15692B011547001FA77E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57BE15682B011547001FA77E /* Assets.xcassets */; };
 		57BE156C2B011547001FA77E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57BE156A2B011547001FA77E /* LaunchScreen.storyboard */; };
-		57BE15782B011626001FA77E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE15772B011626001FA77E /* GameViewController.swift */; };
+		57BE15782B011626001FA77E /* GameScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE15772B011626001FA77E /* GameScreenViewController.swift */; };
 		57BE157D2B01166A001FA77E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE157C2B01166A001FA77E /* SettingsViewController.swift */; };
 		57BE157F2B01167A001FA77E /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE157E2B01167A001FA77E /* ResultsViewController.swift */; };
 		57BE15812B01168B001FA77E /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE15802B01168B001FA77E /* RulesViewController.swift */; };
+		774CD77C2B016CB0007284AE /* GameScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD77B2B016CB0007284AE /* GameScreenPresenter.swift */; };
+		774CD77E2B016CB5007284AE /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD77D2B016CB5007284AE /* GameScreen.swift */; };
+		774CD7802B016D1F007284AE /* GameScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD77F2B016D1F007284AE /* GameScreenProtocols.swift */; };
+		774CD7822B016F06007284AE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774CD7812B016F06007284AE /* Colors.xcassets */; };
+		774CD7842B016F2F007284AE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD7832B016F2F007284AE /* Colors.swift */; };
+		774CD7862B016FE0007284AE /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD7852B016FE0007284AE /* ColorView.swift */; };
+		774CD78A2B01710B007284AE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 774CD7892B01710B007284AE /* SnapKit */; };
+		774CD78C2B01710B007284AE /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 774CD78B2B01710B007284AE /* SnapKit-Dynamic */; };
+		774CD78E2B017C5E007284AE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD78D2B017C5E007284AE /* Fonts.swift */; };
+		774CD7902B017DC4007284AE /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD78F2B017DC4007284AE /* UIApplication+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,11 +35,19 @@
 		57BE15632B011544001FA77E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		57BE15682B011547001FA77E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57BE156B2B011547001FA77E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		57BE15772B011626001FA77E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		57BE15772B011626001FA77E /* GameScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenViewController.swift; sourceTree = "<group>"; };
 		57BE157C2B01166A001FA77E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		57BE157E2B01167A001FA77E /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		57BE15802B01168B001FA77E /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		57D927662B014AC400904463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		774CD77B2B016CB0007284AE /* GameScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenPresenter.swift; sourceTree = "<group>"; };
+		774CD77D2B016CB5007284AE /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
+		774CD77F2B016D1F007284AE /* GameScreenProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenProtocols.swift; sourceTree = "<group>"; };
+		774CD7812B016F06007284AE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		774CD7832B016F2F007284AE /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		774CD7852B016FE0007284AE /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
+		774CD78D2B017C5E007284AE /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		774CD78F2B017DC4007284AE /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,12 +55,102 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				774CD78A2B01710B007284AE /* SnapKit in Frameworks */,
+				774CD78C2B01710B007284AE /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57A8F2A82B01528000BCFD61 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				57BE15632B011544001FA77E /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		57A8F2A92B01528A00BCFD61 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		57A8F2AA2B01529500BCFD61 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		57A8F2AE2B0152C700BCFD61 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				57BE15802B01168B001FA77E /* RulesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		57A8F2AF2B0152CE00BCFD61 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		57A8F2B02B0152D200BCFD61 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		57A8F2B12B0152DC00BCFD61 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				57BE157E2B01167A001FA77E /* ResultsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		57A8F2B22B0152E400BCFD61 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		57A8F2B32B0152E800BCFD61 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		57A8F2B42B0152F200BCFD61 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				57BE157C2B01166A001FA77E /* SettingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		57A8F2B52B0152F800BCFD61 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		57A8F2B62B0152FC00BCFD61 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		57BE15532B011544001FA77E = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +177,7 @@
 				57BE15792B01162D001FA77E /* RulesScreen */,
 				57BE157A2B01163A001FA77E /* ResultsScreen */,
 				57BE157B2B011645001FA77E /* SettingsScreen */,
+				774CD7912B017DDC007284AE /* Extensions */,
 				57BE15742B0115D8001FA77E /* Resourses */,
 			);
 			path = RainbowGame;
@@ -87,7 +196,10 @@
 			isa = PBXGroup;
 			children = (
 				57BE15682B011547001FA77E /* Assets.xcassets */,
+				774CD7812B016F06007284AE /* Colors.xcassets */,
 				57BE156A2B011547001FA77E /* LaunchScreen.storyboard */,
+				774CD7832B016F2F007284AE /* Colors.swift */,
+				774CD78D2B017C5E007284AE /* Fonts.swift */,
 			);
 			path = Resourses;
 			sourceTree = "<group>";
@@ -95,7 +207,9 @@
 		57BE15752B0115F5001FA77E /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				57BE15632B011544001FA77E /* MainViewController.swift */,
+				57A8F2A92B01528A00BCFD61 /* Models */,
+				57A8F2AA2B01529500BCFD61 /* Views */,
+				57A8F2A82B01528000BCFD61 /* Controllers */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -103,15 +217,22 @@
 		57BE15762B011602001FA77E /* GameScreen */ = {
 			isa = PBXGroup;
 			children = (
-				57BE15772B011626001FA77E /* GameViewController.swift */,
+				57BE15772B011626001FA77E /* GameScreenViewController.swift */,
+				774CD77B2B016CB0007284AE /* GameScreenPresenter.swift */,
+				774CD77D2B016CB5007284AE /* GameScreen.swift */,
+				774CD77F2B016D1F007284AE /* GameScreenProtocols.swift */,
+				774CD7872B016FE3007284AE /* Views */,
 			);
-			path = GameScreen;
+			name = GameScreen;
+			path = Screens/GameScreen;
 			sourceTree = "<group>";
 		};
 		57BE15792B01162D001FA77E /* RulesScreen */ = {
 			isa = PBXGroup;
 			children = (
-				57BE15802B01168B001FA77E /* RulesViewController.swift */,
+				57A8F2B02B0152D200BCFD61 /* Models */,
+				57A8F2AF2B0152CE00BCFD61 /* Views */,
+				57A8F2AE2B0152C700BCFD61 /* Controllers */,
 			);
 			path = RulesScreen;
 			sourceTree = "<group>";
@@ -119,7 +240,9 @@
 		57BE157A2B01163A001FA77E /* ResultsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				57BE157E2B01167A001FA77E /* ResultsViewController.swift */,
+				57A8F2B32B0152E800BCFD61 /* Models */,
+				57A8F2B22B0152E400BCFD61 /* Views */,
+				57A8F2B12B0152DC00BCFD61 /* Controllers */,
 			);
 			path = ResultsScreen;
 			sourceTree = "<group>";
@@ -127,9 +250,27 @@
 		57BE157B2B011645001FA77E /* SettingsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				57BE157C2B01166A001FA77E /* SettingsViewController.swift */,
+				57A8F2B62B0152FC00BCFD61 /* Models */,
+				57A8F2B52B0152F800BCFD61 /* Views */,
+				57A8F2B42B0152F200BCFD61 /* Controllers */,
 			);
 			path = SettingsScreen;
+			sourceTree = "<group>";
+		};
+		774CD7872B016FE3007284AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				774CD7852B016FE0007284AE /* ColorView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		774CD7912B017DDC007284AE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				774CD78F2B017DC4007284AE /* UIApplication+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +289,10 @@
 			dependencies = (
 			);
 			name = RainbowGame;
+			packageProductDependencies = (
+				774CD7892B01710B007284AE /* SnapKit */,
+				774CD78B2B01710B007284AE /* SnapKit-Dynamic */,
+			);
 			productName = RainbowGame;
 			productReference = 57BE155C2B011544001FA77E /* RainbowGame.app */;
 			productType = "com.apple.product-type.application";
@@ -167,7 +312,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 57BE15572B011544001FA77E /* Build configuration list for PBXProject "RainbowGame 21.06.10" */;
+			buildConfigurationList = 57BE15572B011544001FA77E /* Build configuration list for PBXProject "RainbowGame" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -176,6 +321,9 @@
 				Base,
 			);
 			mainGroup = 57BE15532B011544001FA77E;
+			packageReferences = (
+				774CD7882B01710B007284AE /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 57BE155D2B011544001FA77E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -190,6 +338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				774CD7822B016F06007284AE /* Colors.xcassets in Resources */,
 				57BE156C2B011547001FA77E /* LaunchScreen.storyboard in Resources */,
 				57BE15692B011547001FA77E /* Assets.xcassets in Resources */,
 			);
@@ -202,11 +351,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				774CD7862B016FE0007284AE /* ColorView.swift in Sources */,
 				57BE15812B01168B001FA77E /* RulesViewController.swift in Sources */,
-				57BE15782B011626001FA77E /* GameViewController.swift in Sources */,
+				774CD78E2B017C5E007284AE /* Fonts.swift in Sources */,
+				774CD7842B016F2F007284AE /* Colors.swift in Sources */,
+				57BE15782B011626001FA77E /* GameScreenViewController.swift in Sources */,
+				774CD77C2B016CB0007284AE /* GameScreenPresenter.swift in Sources */,
+				774CD7902B017DC4007284AE /* UIApplication+Extension.swift in Sources */,
 				57BE15642B011544001FA77E /* MainViewController.swift in Sources */,
+				774CD77E2B016CB5007284AE /* GameScreen.swift in Sources */,
 				57BE15602B011544001FA77E /* AppDelegate.swift in Sources */,
 				57BE157D2B01166A001FA77E /* SettingsViewController.swift in Sources */,
+				774CD7802B016D1F007284AE /* GameScreenProtocols.swift in Sources */,
 				57BE15622B011544001FA77E /* SceneDelegate.swift in Sources */,
 				57BE157F2B01167A001FA77E /* ResultsViewController.swift in Sources */,
 			);
@@ -410,7 +566,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		57BE15572B011544001FA77E /* Build configuration list for PBXProject "RainbowGame 21.06.10" */ = {
+		57BE15572B011544001FA77E /* Build configuration list for PBXProject "RainbowGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				57BE156E2B011547001FA77E /* Debug */,
@@ -429,6 +585,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		774CD7882B01710B007284AE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		774CD7892B01710B007284AE /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 774CD7882B01710B007284AE /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		774CD78B2B01710B007284AE /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 774CD7882B01710B007284AE /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 57BE15542B011544001FA77E /* Project object */;
 }
