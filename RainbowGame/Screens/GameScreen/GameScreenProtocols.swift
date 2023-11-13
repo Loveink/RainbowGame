@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol GameScreenInput: UIViewController {
+protocol GameScreenInput: RainbowViewController {
     func updateTitle(_ text: String)
     func updateWith(_ viewModel: GameScreen.ViewModel)
 }

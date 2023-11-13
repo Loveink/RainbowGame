@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: RainbowViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
