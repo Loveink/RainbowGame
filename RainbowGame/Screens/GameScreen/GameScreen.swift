@@ -7,14 +7,23 @@
 
 import UIKit
 
-struct GameScreen {
+final class GameScreen {
+    
+    weak var controller: UIViewController?
+    
     func build() -> UIViewController {
         let presenter = GameScreenPresenter()
         let controller = GameScreenViewController()
         controller.presenter = presenter
+        presenter.screen = self
         presenter.view = controller
+        self.controller = controller
         
         return controller
+    }
+    
+    func showResultsScreen() {
+        controller?.navigationController?.pushViewController(ResultsViewController(), animated: true)
     }
 }
 

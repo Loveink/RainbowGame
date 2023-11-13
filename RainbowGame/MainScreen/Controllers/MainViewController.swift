@@ -13,4 +13,8 @@ class MainViewController: RainbowViewController {
     super.viewDidLoad()
     view.backgroundColor = .white
   }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.pushViewController(GameScreen().build(), animated: true)
+    }
 }

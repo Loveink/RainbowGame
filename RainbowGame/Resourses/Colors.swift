@@ -21,4 +21,5 @@ enum Colors {
     }
     
     static let black = UIColor(named: "Black")!
+    static let gray = UIColor(named: "Gray")!
 }
