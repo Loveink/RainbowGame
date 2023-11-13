@@ -172,7 +172,11 @@
 			children = (
 				57D927662B014AC400904463 /* Info.plist */,
 				57BE15732B0115C8001FA77E /* App */,
-				774CD7922B017DE6007284AE /* Screens */,
+				57BE15752B0115F5001FA77E /* MainScreen */,
+				57BE15762B011602001FA77E /* GameScreen */,
+				57BE15792B01162D001FA77E /* RulesScreen */,
+				57BE157A2B01163A001FA77E /* ResultsScreen */,
+				57BE157B2B011645001FA77E /* SettingsScreen */,
 				774CD7912B017DDC007284AE /* Extensions */,
 				57BE15742B0115D8001FA77E /* Resourses */,
 			);
@@ -219,7 +223,8 @@
 				774CD77F2B016D1F007284AE /* GameScreenProtocols.swift */,
 				774CD7872B016FE3007284AE /* Views */,
 			);
-			path = GameScreen;
+			name = GameScreen;
+			path = Screens/GameScreen;
 			sourceTree = "<group>";
 		};
 		57BE15792B01162D001FA77E /* RulesScreen */ = {
@@ -266,18 +271,6 @@
 				774CD78F2B017DC4007284AE /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		774CD7922B017DE6007284AE /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				57BE15752B0115F5001FA77E /* MainScreen */,
-				57BE15762B011602001FA77E /* GameScreen */,
-				57BE15792B01162D001FA77E /* RulesScreen */,
-				57BE157A2B01163A001FA77E /* ResultsScreen */,
-				57BE157B2B011645001FA77E /* SettingsScreen */,
-			);
-			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
