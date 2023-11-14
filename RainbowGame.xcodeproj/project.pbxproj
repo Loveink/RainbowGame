@@ -16,6 +16,9 @@
 		57BE157D2B01166A001FA77E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE157C2B01166A001FA77E /* SettingsViewController.swift */; };
 		57BE157F2B01167A001FA77E /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE157E2B01167A001FA77E /* ResultsViewController.swift */; };
 		57BE15812B01168B001FA77E /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE15802B01168B001FA77E /* RulesViewController.swift */; };
+		5E12B3B42B03D9C4000405CF /* SettingTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E12B3B32B03D9C4000405CF /* SettingTimeCell.swift */; };
+		5E12B3B62B03D9F3000405CF /* SettingSpeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E12B3B52B03D9F3000405CF /* SettingSpeedCell.swift */; };
+		5E12B3B82B03DA1A000405CF /* SettingBackgroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E12B3B72B03DA1A000405CF /* SettingBackgroundCell.swift */; };
 		774CD77C2B016CB0007284AE /* GameScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD77B2B016CB0007284AE /* GameScreenPresenter.swift */; };
 		774CD77E2B016CB5007284AE /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD77D2B016CB5007284AE /* GameScreen.swift */; };
 		774CD7802B016D1F007284AE /* GameScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD77F2B016D1F007284AE /* GameScreenProtocols.swift */; };
@@ -40,6 +43,9 @@
 		57BE157E2B01167A001FA77E /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		57BE15802B01168B001FA77E /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		57D927662B014AC400904463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E12B3B32B03D9C4000405CF /* SettingTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTimeCell.swift; sourceTree = "<group>"; };
+		5E12B3B52B03D9F3000405CF /* SettingSpeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSpeedCell.swift; sourceTree = "<group>"; };
+		5E12B3B72B03DA1A000405CF /* SettingBackgroundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingBackgroundCell.swift; sourceTree = "<group>"; };
 		774CD77B2B016CB0007284AE /* GameScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenPresenter.swift; sourceTree = "<group>"; };
 		774CD77D2B016CB5007284AE /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
 		774CD77F2B016D1F007284AE /* GameScreenProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenProtocols.swift; sourceTree = "<group>"; };
@@ -133,6 +139,9 @@
 			isa = PBXGroup;
 			children = (
 				57BE157C2B01166A001FA77E /* SettingsViewController.swift */,
+				5E12B3B32B03D9C4000405CF /* SettingTimeCell.swift */,
+				5E12B3B52B03D9F3000405CF /* SettingSpeedCell.swift */,
+				5E12B3B72B03DA1A000405CF /* SettingBackgroundCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -351,12 +360,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E12B3B62B03D9F3000405CF /* SettingSpeedCell.swift in Sources */,
 				774CD7862B016FE0007284AE /* ColorView.swift in Sources */,
 				57BE15812B01168B001FA77E /* RulesViewController.swift in Sources */,
 				774CD78E2B017C5E007284AE /* Fonts.swift in Sources */,
 				774CD7842B016F2F007284AE /* Colors.swift in Sources */,
 				57BE15782B011626001FA77E /* GameScreenViewController.swift in Sources */,
 				774CD77C2B016CB0007284AE /* GameScreenPresenter.swift in Sources */,
+				5E12B3B82B03DA1A000405CF /* SettingBackgroundCell.swift in Sources */,
 				774CD7902B017DC4007284AE /* UIApplication+Extension.swift in Sources */,
 				57BE15642B011544001FA77E /* MainViewController.swift in Sources */,
 				774CD77E2B016CB5007284AE /* GameScreen.swift in Sources */,
@@ -364,6 +375,7 @@
 				57BE157D2B01166A001FA77E /* SettingsViewController.swift in Sources */,
 				774CD7802B016D1F007284AE /* GameScreenProtocols.swift in Sources */,
 				57BE15622B011544001FA77E /* SceneDelegate.swift in Sources */,
+				5E12B3B42B03D9C4000405CF /* SettingTimeCell.swift in Sources */,
 				57BE157F2B01167A001FA77E /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
