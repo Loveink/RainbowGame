@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ResultsViewController: RainbowViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Declaration
     private let gameResults = GameResults()
