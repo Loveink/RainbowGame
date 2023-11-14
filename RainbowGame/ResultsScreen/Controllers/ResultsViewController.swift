@@ -118,11 +118,11 @@ class ResultsViewController: RainbowViewController, UITableViewDataSource, UITab
     }
     
     private func updateUI() {
-        let hasResults              = !results.isEmpty
-        tableView.isHidden          = !hasResults
-        bestResultLabel.isHidden    = !hasResults
-        clearButton.isHidden        = !hasResults
-        emptyTableLabel.isHidden    = hasResults
+        let hasResults = !gameResults.getResults().isEmpty
+        tableView.isHidden = !hasResults
+        bestResultLabel.isHidden = !hasResults
+        clearButton.isHidden = !hasResults
+        emptyTableLabel.isHidden = hasResults
         
         if hasResults {
             tableView.reloadData()
@@ -146,9 +146,8 @@ class ResultsViewController: RainbowViewController, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell    = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as! ResultCell
-        let result  = results[indexPath.row]
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as! ResultCell
+        let result = gameResults.getResults()[indexPath.row]
         cell.configure(with: result)
         cell.backgroundColor = .white
     
