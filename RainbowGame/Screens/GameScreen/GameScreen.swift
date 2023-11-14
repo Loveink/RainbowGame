@@ -12,7 +12,7 @@ final class GameScreen {
     weak var controller: UIViewController?
     
     func build() -> UIViewController {
-        let presenter = GameScreenPresenter()
+        let presenter = GameScreenPresenter(storage: StorageService())
         let controller = GameScreenViewController()
         controller.presenter = presenter
         presenter.screen = self
@@ -40,5 +40,6 @@ extension GameScreen {
     }
     struct ViewModel {
         let color: Color?
+        let speed: String?
     }
 }

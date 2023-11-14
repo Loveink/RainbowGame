@@ -31,10 +31,10 @@
 		774CD7862B016FE0007284AE /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD7852B016FE0007284AE /* ColorView.swift */; };
 		774CD78E2B017C5E007284AE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD78D2B017C5E007284AE /* Fonts.swift */; };
 		774CD7902B017DC4007284AE /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD78F2B017DC4007284AE /* UIApplication+Extension.swift */; };
+		77599F492B03F59C00C0D9B6 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77599F482B03F59C00C0D9B6 /* StorageService.swift */; };
 		CB43A2522B02BDBF0021904B /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43A2512B02BDBF0021904B /* ResultsViewController.swift */; };
 		CB43A2542B02BDE80021904B /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43A2532B02BDE80021904B /* ResultCell.swift */; };
 		CB43A2562B02BDFE0021904B /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43A2552B02BDFE0021904B /* GameResult.swift */; };
-		CB43A2582B02BE120021904B /* GameResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43A2572B02BE120021904B /* GameResults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,10 +63,10 @@
 		774CD7852B016FE0007284AE /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 		774CD78D2B017C5E007284AE /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		774CD78F2B017DC4007284AE /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		77599F482B03F59C00C0D9B6 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		CB43A2512B02BDBF0021904B /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		CB43A2532B02BDE80021904B /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		CB43A2552B02BDFE0021904B /* GameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
-		CB43A2572B02BE120021904B /* GameResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				57D927662B014AC400904463 /* Info.plist */,
+				77599F4A2B03F5A200C0D9B6 /* Services */,
 				57BE15732B0115C8001FA77E /* App */,
 				57BE15752B0115F5001FA77E /* MainScreen */,
 				57BE15762B011602001FA77E /* GameScreen */,
@@ -284,11 +285,18 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		77599F4A2B03F5A200C0D9B6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				77599F482B03F59C00C0D9B6 /* StorageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		CB43A24E2B02BD910021904B /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				CB43A2552B02BDFE0021904B /* GameResult.swift */,
-				CB43A2572B02BE120021904B /* GameResults.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -396,12 +404,12 @@
 				774CD77C2B016CB0007284AE /* GameScreenPresenter.swift in Sources */,
 				774CD7902B017DC4007284AE /* UIApplication+Extension.swift in Sources */,
 				770AD2612B026ACA00150DCF /* RainbowNavigationController.swift in Sources */,
+				77599F492B03F59C00C0D9B6 /* StorageService.swift in Sources */,
 				770AD2662B026F0700150DCF /* RainbowViewController.swift in Sources */,
 				774CD77E2B016CB5007284AE /* GameScreen.swift in Sources */,
 				24A047EA2B03ED5800516074 /* CustomButton.swift in Sources */,
 				57C8F23D2B03F1D60001DD19 /* SettingTimeCell.swift in Sources */,
 				CB43A2542B02BDE80021904B /* ResultCell.swift in Sources */,
-				CB43A2582B02BE120021904B /* GameResults.swift in Sources */,
 				CB43A2522B02BDBF0021904B /* ResultsViewController.swift in Sources */,
 				57BE15602B011544001FA77E /* AppDelegate.swift in Sources */,
 				57C8F23B2B03F1D60001DD19 /* SettingBackgroundCell.swift in Sources */,

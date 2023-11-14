@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct GameResult {
+struct GameResult: Codable {
     let speed: Int
-    let time: String
+    let time: Int
     let score: Int
     let totalWords: Int
-    var orderNumber: Int
+    let orderNumber: Int
 
-    init(score: Int, totalWords: Int, speed: Int, time: String) {
+    init(score: Int, totalWords: Int, speed: Int, time: Int, orderNumber: Int) {
         self.speed = speed
         self.time = time
         self.score = score
         self.totalWords = totalWords
-        self.orderNumber = 0
+        self.orderNumber = orderNumber
     }
 }

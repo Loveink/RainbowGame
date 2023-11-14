@@ -10,7 +10,8 @@ import UIKit
 class ResultsViewController: RainbowViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Declaration
-    private let gameResults = GameResults()
+    private let storage: ResultsStorage = StorageService()
+    private lazy var results = storage.results
     
     private let tableView: UITableView = {
         let table = UITableView()
@@ -66,9 +67,10 @@ class ResultsViewController: RainbowViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        title = "Статистика"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: Images.arrowLeft, style: .plain, target: self, action: #selector(didTapBackButton))
         setupTableView()
         setupStackView()
-        loadResults()
         updateUI()
     }
     
@@ -91,7 +93,7 @@ class ResultsViewController: RainbowViewController, UITableViewDataSource, UITab
         clearButton.addTarget(self, action: #selector(clearResults), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
@@ -115,18 +117,8 @@ class ResultsViewController: RainbowViewController, UITableViewDataSource, UITab
         ])
     }
     
-    
-    // Удалить, когда реализуем механизм сохранения данных
-    private func loadResults() {
-        
-        gameResults.addResult(score: 5, totalWords: 10, time: "15.5", speed: 2)
-        gameResults.addResult(score: 5, totalWords: 10, time: "15.5", speed: 2)
-        gameResults.addResult(score: 5, totalWords: 10, time: "15.5", speed: 2)
-        gameResults.addResult(score: 5, totalWords: 10, time: "1.5", speed: 2)
-    }
-    
     private func updateUI() {
-        let hasResults              = !gameResults.getResults().isEmpty
+        let hasResults              = !results.isEmpty
         tableView.isHidden          = !hasResults
         bestResultLabel.isHidden    = !hasResults
         clearButton.isHidden        = !hasResults
@@ -138,18 +130,24 @@ class ResultsViewController: RainbowViewController, UITableViewDataSource, UITab
     }
     
     @objc private func clearResults() {
-        gameResults.clearResults()
+        storage.clearResults()
+        results = []
         updateUI()
+    }
+    
+    @objc
+    private func didTapBackButton() {
+        navigationController?.popToRootViewController(animated: true)
     }
     // MARK: - TableView Data Surce
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gameResults.getResults().count
+        return results.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell    = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as! ResultCell
-        let result  = gameResults.getResults()[indexPath.row]
+        let result  = results[indexPath.row]
         cell.configure(with: result)
         cell.backgroundColor = .white
     

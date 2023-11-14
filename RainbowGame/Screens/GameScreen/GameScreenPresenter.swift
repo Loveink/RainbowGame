@@ -11,21 +11,28 @@ final class GameScreenPresenter: GameScreenOutput {
     var screen: GameScreen?
     weak var view: GameScreenInput?
     
-    var roundTime = 6
-    var colorChangeTime = 1
-    var remaningTime = 0
-    var interColorTime = 0
-    var roundPoints = 0
+    private let storage: GameStorage
+    private lazy var colors: [GameColor] = storage.colors
+    private lazy var roundTime: Int = storage.gameTime
+    private lazy var colorChangeTime = 2 * storage.cardChangeSpeed
+    
+    private var remaningTime = 0
+    private var interColorTime = 0
+    private var roundPoints = 0
     
     private var timer: Timer?
     private var previousColor: GameColor?
     private var randomColor: GameColor {
-        var randomColor = GameColor.allCases.randomElement()!
+        var randomColor = colors.randomElement()!
         while randomColor == previousColor {
-            randomColor = GameColor.allCases.randomElement()!
+            randomColor = colors.randomElement()!
         }
         previousColor = randomColor
         return randomColor
+    }
+    
+    init(storage: GameStorage) {
+        self.storage = storage
     }
     
     deinit {
@@ -68,9 +75,18 @@ final class GameScreenPresenter: GameScreenOutput {
     }
     
     private func timerFired() {
-        if remaningTime <= 0 {
+        if remaningTime <= 1 {
             timer?.invalidate()
             timer = nil
+            storage.addResult(
+                .init(
+                    score: roundPoints,
+                    totalWords: roundTime / colorChangeTime,
+                    speed: colorChangeTime,
+                    time: roundTime,
+                    orderNumber: storage.results.count + 1
+                )
+            )
             screen?.showResultsScreen()
             return
         }
@@ -86,60 +102,26 @@ final class GameScreenPresenter: GameScreenOutput {
     
     private func updateColor() {
         let randomColor = self.randomColor
-        let fakeColor = randomColor.fakeColor
         view?.updateWith(
             .init(
                 color: .init(
                     text: randomColor.fakeColor.name,
-                    textColor: .white,
-                    frame: .init(color: randomColor.color),
-                    didSelectHandler: {
+                    textColor: storage.coloredFrame ? .white : randomColor.color,
+                    frame: storage.coloredFrame ? .init(color: randomColor.color) : nil,
+                    didSelectHandler: storage.withChecks ? {
                         [weak self] in
                         
                         self?.roundPoints += 1
-                    }
-                )
+                    } : nil
+                ),
+                speed: storage.cardChangeSpeed > 1 ? "x\(storage.cardChangeSpeed)" : nil
             )
         )
     }
 }
 
-extension GameScreenPresenter {
-    private enum GameColor: CaseIterable {
-        case red, blue, yellow, green, purple
-        
-        var name: String {
-            switch self {
-            case .red:
-                return "Красный"
-            case .blue:
-                 return "Синий"
-            case .yellow:
-                return "Желтый"
-            case .green:
-                return "Зеленый"
-            case .purple:
-                return "Фиолетовый"
-            }
-        }
-        
-        var fakeColor: Self {
-            GameColor.allCases.filter { $0 != self }.randomElement()!
-        }
-        
-        var color: UIColor {
-            switch self {
-            case .red:
-				return Colors.Cards.red
-            case .blue:
-				return Colors.Cards.blue
-            case .yellow:
-				return Colors.Cards.yellow
-            case .green:
-				return Colors.Cards.green
-            case .purple:
-				return Colors.Cards.purple
-            }
-        }
+extension GameColor {
+    var fakeColor: Self {
+        GameColor.allCases.filter { $0 != self }.randomElement()!
     }
 }
