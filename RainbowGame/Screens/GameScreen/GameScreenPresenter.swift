@@ -130,15 +130,15 @@ extension GameScreenPresenter {
         var color: UIColor {
             switch self {
             case .red:
-                Colors.Cards.red
+				return Colors.Cards.red
             case .blue:
-                Colors.Cards.blue
+				return Colors.Cards.blue
             case .yellow:
-                Colors.Cards.yellow
+				return Colors.Cards.yellow
             case .green:
-                Colors.Cards.green
+				return Colors.Cards.green
             case .purple:
-                Colors.Cards.purple
+				return Colors.Cards.purple
             }
         }
     }
