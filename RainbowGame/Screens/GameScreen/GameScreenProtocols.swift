@@ -14,4 +14,5 @@ protocol GameScreenInput: RainbowViewController {
 
 protocol GameScreenOutput: AnyObject {
     func activate()
+    func pause()
 }
