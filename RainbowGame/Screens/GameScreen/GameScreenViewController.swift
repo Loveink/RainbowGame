@@ -70,29 +70,36 @@ final class GameScreenViewController: RainbowViewController, GameScreenInput {
             if colorView.superview == nil {
                 view.addSubview(colorView)
             }
-            updateColorViewPosition()
+            updateColorViewPosition(viewModel.wordPosition)
         } else {
             colorView.removeFromSuperview()
         }
     }
     
-    private func updateColorViewPosition() {
-        let lowerY = UIApplication.safeAreaInsets.top + (navigationController?.navigationBar.frame.height ?? .zero)
-        let upperY = view.bounds.height - Layout.colorViewSize.height - UIApplication.safeAreaInsets.top - UIApplication.safeAreaInsets.bottom
-        let upperX = view.bounds.width - Layout.colorViewSize.width - UIApplication.safeAreaInsets.left - UIApplication.safeAreaInsets.right
-        let y = CGFloat.random(in: (lowerY..<upperY))
-        var x = CGFloat.random(in: (UIApplication.safeAreaInsets.left..<upperX))
-        
-        if !speedView.isHidden {
-            if y + Layout.colorViewSize.height > speedView.frame.minY && x + Layout.colorViewSize.width > speedView.frame.minX {
-                x = speedView.frame.minX - Layout.colorViewSize.width - Layout.speedViewInsets.right
+    private func updateColorViewPosition(_ position: GameWordPosition) {
+        switch position {
+        case .middle:
+            colorView.snp.makeConstraints {
+                $0.center.equalToSuperview()
             }
-        }
-        
-        colorView.snp.remakeConstraints {
-            $0.size.equalTo(Layout.colorViewSize)
-            $0.leading.equalTo(x)
-            $0.top.equalTo(y)
+        case .random:
+            let lowerY = UIApplication.safeAreaInsets.top + (navigationController?.navigationBar.frame.height ?? .zero)
+            let upperY = view.bounds.height - Layout.colorViewSize.height - UIApplication.safeAreaInsets.top - UIApplication.safeAreaInsets.bottom
+            let upperX = view.bounds.width - Layout.colorViewSize.width - UIApplication.safeAreaInsets.left - UIApplication.safeAreaInsets.right
+            let y = CGFloat.random(in: (lowerY..<upperY))
+            var x = CGFloat.random(in: (UIApplication.safeAreaInsets.left..<upperX))
+            
+            if !speedView.isHidden {
+                if y + Layout.colorViewSize.height > speedView.frame.minY && x + Layout.colorViewSize.width > speedView.frame.minX {
+                    x = speedView.frame.minX - Layout.colorViewSize.width - Layout.speedViewInsets.right
+                }
+            }
+            
+            colorView.snp.remakeConstraints {
+                $0.size.equalTo(Layout.colorViewSize)
+                $0.leading.equalTo(x)
+                $0.top.equalTo(y)
+            }
         }
     }
     

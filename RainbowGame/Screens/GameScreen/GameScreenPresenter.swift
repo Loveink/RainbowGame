@@ -114,6 +114,7 @@ final class GameScreenPresenter: GameScreenOutput {
                         self?.roundPoints += 1
                     } : nil
                 ),
+                wordPosition: storage.wordPosition,
                 speed: storage.cardChangeSpeed > 1 ? "x\(storage.cardChangeSpeed)" : nil
             )
         )

@@ -40,6 +40,7 @@ extension GameScreen {
     }
     struct ViewModel {
         let color: Color?
+        let wordPosition: GameWordPosition
         let speed: String?
     }
 }
