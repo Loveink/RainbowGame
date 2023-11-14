@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: RainbowViewController {
 	
 	/// three main buttons:
 	var newGameButton = CustomButton(customTitle: "Новая игра",

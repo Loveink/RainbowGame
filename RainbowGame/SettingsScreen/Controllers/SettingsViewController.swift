@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SettingsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+final class SettingsViewController: RainbowViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 	
 	private var collectionView: UICollectionView!
 	
