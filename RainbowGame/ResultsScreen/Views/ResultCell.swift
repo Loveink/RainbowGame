@@ -11,50 +11,50 @@ class ResultCell: UITableViewCell {
 
     private let containerView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius                         = 20
-        view.layer.masksToBounds                        = true
-        view.backgroundColor                            = .lightGray
-        view.layer.masksToBounds                        = false
-        view.layer.shadowColor                          = UIColor.black.cgColor
-        view.layer.shadowOpacity                        = 0.3
-        view.layer.shadowOffset                         = CGSize(width: 0, height: 2)
-        view.layer.shadowRadius                         = 3
+        view.layer.cornerRadius = 20
+        view.layer.masksToBounds = true
+        view.backgroundColor = .lightGray
+        view.layer.masksToBounds = false
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.3
+        view.layer.shadowOffset = CGSize(width: 0, height: 2)
+        view.layer.shadowRadius = 3
         view.translatesAutoresizingMaskIntoConstraints  = false
         return view
     }()
 
     private let orderLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment                             = .left
-        label.font                                      = .boldSystemFont(ofSize: 14)
-        label.textColor                                 = .black
+        label.textAlignment = .left
+        label.font = .boldSystemFont(ofSize: 14)
+        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     private let speedLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment                             = .right
-        label.font                                      = .boldSystemFont(ofSize: 14)
-        label.textColor                                 = .black
+        label.textAlignment = .right
+        label.font = .boldSystemFont(ofSize: 14)
+        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     private let timeLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment                             = .center
-        label.font                                      = .boldSystemFont(ofSize: 25)
-        label.textColor                                 = .black
+        label.textAlignment = .center
+        label.font = .boldSystemFont(ofSize: 25)
+        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let scoreLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment                             = .right
-        label.font                                      = .boldSystemFont(ofSize: 14)
-        label.textColor                                 = .black
+        label.textAlignment = .right
+        label.font = .boldSystemFont(ofSize: 14)
+        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
