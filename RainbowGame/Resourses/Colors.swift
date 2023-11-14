@@ -19,4 +19,7 @@ enum Colors {
         static let yellow = UIColor(named: "yellowCard")!
         static let purple = UIColor(named: "purpleCard")!
     }
+    
+    static let black = UIColor(named: "BlackPrimary")!
+    static let gray = UIColor(named: "GrayPrimary")!
 }

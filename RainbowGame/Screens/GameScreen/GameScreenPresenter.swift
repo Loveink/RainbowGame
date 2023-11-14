@@ -8,12 +8,14 @@
 import UIKit
 
 final class GameScreenPresenter: GameScreenOutput {
+    var screen: GameScreen?
     weak var view: GameScreenInput?
     
-    var roundTime = 12
+    var roundTime = 6
     var colorChangeTime = 1
     var remaningTime = 0
     var interColorTime = 0
+    var roundPoints = 0
     
     private var timer: Timer?
     private var previousColor: GameColor?
@@ -26,16 +28,24 @@ final class GameScreenPresenter: GameScreenOutput {
         return randomColor
     }
     
-    func activate() {
-        start()
+    deinit {
+        timer?.invalidate()
     }
     
-    private func start() {
-        remaningTime = roundTime
-        interColorTime = colorChangeTime
-        view?.updateTitle("\(remaningTime)")
-        updateColor()
-        
+    func activate() {
+        start(new: true)
+    }
+    
+    func pause() {
+        guard let timer else {
+            start(new: false)
+            return
+        }
+        timer.invalidate()
+        self.timer = nil
+    }
+    
+    private func start(new: Bool) {
         timer = Timer.scheduledTimer(
             withTimeInterval: 1.0,
             repeats: true,
@@ -45,12 +55,23 @@ final class GameScreenPresenter: GameScreenOutput {
                 self?.timerFired()
             }
         )
+        
+        guard new else {
+            return
+        }
+        
+        roundPoints = 0
+        remaningTime = roundTime
+        interColorTime = colorChangeTime
+        view?.updateTitle("\(remaningTime)")
+        updateColor()
     }
     
-    func timerFired() {
+    private func timerFired() {
         if remaningTime <= 0 {
             timer?.invalidate()
             timer = nil
+            screen?.showResultsScreen()
             return
         }
         remaningTime -= 1
@@ -73,7 +94,9 @@ final class GameScreenPresenter: GameScreenOutput {
                     textColor: .white,
                     frame: .init(color: randomColor.color),
                     didSelectHandler: {
-                        print("123")
+                        [weak self] in
+                        
+                        self?.roundPoints += 1
                     }
                 )
             )

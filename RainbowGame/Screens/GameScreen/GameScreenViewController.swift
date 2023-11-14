@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class GameScreenViewController: UIViewController, GameScreenInput {
+final class GameScreenViewController: RainbowViewController, GameScreenInput {
     
     enum Layout {
         static let colorViewSize: CGSize = .init(width: 205, height: 40)
@@ -23,6 +23,11 @@ final class GameScreenViewController: UIViewController, GameScreenInput {
         super.viewDidLoad()
 
         configure()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         presenter.activate()
     }
 
@@ -50,9 +55,10 @@ final class GameScreenViewController: UIViewController, GameScreenInput {
     }
     
     private func updateColorViewPosition() {
+        let lowerY = UIApplication.safeAreaInsets.top + (navigationController?.navigationBar.frame.height ?? .zero)
         let upperY = view.bounds.height - Layout.colorViewSize.height - UIApplication.safeAreaInsets.top - UIApplication.safeAreaInsets.bottom
         let upperX = view.bounds.width - Layout.colorViewSize.width - UIApplication.safeAreaInsets.left - UIApplication.safeAreaInsets.right
-        let y = CGFloat.random(in: (UIApplication.safeAreaInsets.top..<upperY))
+        let y = CGFloat.random(in: (lowerY..<upperY))
         let x = CGFloat.random(in: (UIApplication.safeAreaInsets.left..<upperX))
         
         colorView.snp.remakeConstraints {
@@ -64,5 +70,12 @@ final class GameScreenViewController: UIViewController, GameScreenInput {
     
     private func configure() {
         view.backgroundColor = Colors.Background.lvl1
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: Images.pause, style: .plain, target: self, action: #selector(didTapPause))
+    }
+    
+    @objc
+    private func didTapPause() {
+        presenter.pause()
     }
 }
