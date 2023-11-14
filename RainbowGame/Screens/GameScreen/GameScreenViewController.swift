@@ -23,6 +23,11 @@ final class GameScreenViewController: RainbowViewController, GameScreenInput {
         super.viewDidLoad()
 
         configure()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         presenter.activate()
     }
 

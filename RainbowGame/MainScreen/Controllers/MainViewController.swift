@@ -18,3 +18,4 @@ class MainViewController: RainbowViewController {
         navigationController?.pushViewController(GameScreen().build(), animated: true)
     }
 }
+
