@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		24A047EA2B03ED5800516074 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A047E92B03ED5800516074 /* CustomButton.swift */; };
 		24A047EC2B03F0BE00516074 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A047EB2B03F0BE00516074 /* MainViewController.swift */; };
+		24A047EF2B03F30F00516074 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 24A047EE2B03F30F00516074 /* SnapKit */; };
 		57BE15602B011544001FA77E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE155F2B011544001FA77E /* AppDelegate.swift */; };
 		57BE15622B011544001FA77E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE15612B011544001FA77E /* SceneDelegate.swift */; };
 		57BE15692B011547001FA77E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57BE15682B011547001FA77E /* Assets.xcassets */; };
@@ -28,8 +29,6 @@
 		774CD7822B016F06007284AE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774CD7812B016F06007284AE /* Colors.xcassets */; };
 		774CD7842B016F2F007284AE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD7832B016F2F007284AE /* Colors.swift */; };
 		774CD7862B016FE0007284AE /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD7852B016FE0007284AE /* ColorView.swift */; };
-		774CD78A2B01710B007284AE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 774CD7892B01710B007284AE /* SnapKit */; };
-		774CD78C2B01710B007284AE /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 774CD78B2B01710B007284AE /* SnapKit-Dynamic */; };
 		774CD78E2B017C5E007284AE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD78D2B017C5E007284AE /* Fonts.swift */; };
 		774CD7902B017DC4007284AE /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD78F2B017DC4007284AE /* UIApplication+Extension.swift */; };
 		CB43A2522B02BDBF0021904B /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43A2512B02BDBF0021904B /* ResultsViewController.swift */; };
@@ -75,8 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				774CD78A2B01710B007284AE /* SnapKit in Frameworks */,
-				774CD78C2B01710B007284AE /* SnapKit-Dynamic in Frameworks */,
+				24A047EF2B03F30F00516074 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,8 +326,7 @@
 			);
 			name = RainbowGame;
 			packageProductDependencies = (
-				774CD7892B01710B007284AE /* SnapKit */,
-				774CD78B2B01710B007284AE /* SnapKit-Dynamic */,
+				24A047EE2B03F30F00516074 /* SnapKit */,
 			);
 			productName = RainbowGame;
 			productReference = 57BE155C2B011544001FA77E /* RainbowGame.app */;
@@ -360,7 +357,7 @@
 			);
 			mainGroup = 57BE15532B011544001FA77E;
 			packageReferences = (
-				774CD7882B01710B007284AE /* XCRemoteSwiftPackageReference "SnapKit" */,
+				24A047ED2B03F30F00516074 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 57BE155D2B011544001FA77E /* Products */;
 			projectDirPath = "";
@@ -635,26 +632,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		774CD7882B01710B007284AE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		24A047ED2B03F30F00516074 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
-				kind = exactVersion;
-				version = 5.6.0;
+				branch = develop;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		774CD7892B01710B007284AE /* SnapKit */ = {
+		24A047EE2B03F30F00516074 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 774CD7882B01710B007284AE /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 24A047ED2B03F30F00516074 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		774CD78B2B01710B007284AE /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 774CD7882B01710B007284AE /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
