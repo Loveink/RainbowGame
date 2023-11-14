@@ -14,7 +14,14 @@ final class GameScreenPresenter: GameScreenOutput {
     private let storage: GameStorage
     private lazy var colors: [GameColor] = storage.colors
     private lazy var roundTime: Int = storage.gameTime
-    private lazy var colorChangeTime = 2 * storage.cardChangeSpeed
+    private lazy var colorChangeTime = 10 / storage.cardChangeSpeed
+    private lazy var gameSpeed = storage.cardChangeSpeed {
+        didSet {
+            if gameSpeed > 5 {
+                gameSpeed = 1
+            }
+        }
+    }
     
     private var remaningTime = 0
     private var interColorTime = 0
@@ -43,16 +50,31 @@ final class GameScreenPresenter: GameScreenOutput {
         start(new: true)
     }
     
+    func play() {
+        if gameSpeed != storage.cardChangeSpeed {
+            colorChangeTime = 10 / gameSpeed
+            if interColorTime <= colorChangeTime * 2 {
+                interColorTime = 0
+            }
+            storage.cardChangeSpeed = gameSpeed
+        }
+        
+        start(new: false)
+    }
+    
     func pause() {
         guard let timer else {
-            start(new: false)
             return
         }
         timer.invalidate()
         self.timer = nil
+        view?.updateGameState(.paused)
     }
     
     private func start(new: Bool) {
+        
+        view?.updateGameState(.plaing)
+        
         timer = Timer.scheduledTimer(
             withTimeInterval: 1.0,
             repeats: true,
@@ -115,7 +137,17 @@ final class GameScreenPresenter: GameScreenOutput {
                     } : nil
                 ),
                 wordPosition: storage.wordPosition,
-                speed: storage.cardChangeSpeed > 1 ? "x\(storage.cardChangeSpeed)" : nil
+                speed: "x\(gameSpeed)",
+                speedClosure: {
+                    [weak self] in
+                    
+                    guard let self else { return }
+                    
+                    self.pause()
+                    self.view?.updateGameState(.paused)
+                    self.gameSpeed += 1
+                    self.view?.updateSpeed("x\(self.gameSpeed)")
+                }
             )
         )
     }

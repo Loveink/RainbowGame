@@ -21,19 +21,17 @@ final class GameScreenViewController: RainbowViewController, GameScreenInput {
         return view
     }()
     
-    private let speedView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = Layout.speedViewSize.width / 2
-        view.backgroundColor = Colors.Cards.red
-        return view
+    private lazy var speedButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .red
+        button.titleLabel?.font = .systemFont(ofSize: 25)
+        button.tintColor = .white
+        button.layer.cornerRadius = Layout.speedViewSize.width / 2
+        button.addTarget(self, action: #selector(didTapSpeed), for: .touchUpInside)
+        return button
     }()
     
-    private let speedLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 25)
-        label.textColor = .white
-        return label
-    }()
+    private var speedButtonHandler: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,11 +51,13 @@ final class GameScreenViewController: RainbowViewController, GameScreenInput {
     
     func updateWith(_ viewModel: GameScreen.ViewModel) {
         if let speed = viewModel.speed {
-            speedLabel.text = speed
-            speedView.isHidden = false
+            speedButton.setTitle(speed, for: .normal)
+            speedButton.isHidden = false
         } else {
-            speedView.isHidden = true
+            speedButton.isHidden = true
         }
+        speedButtonHandler = viewModel.speedClosure
+        
         if let color = viewModel.color {
             colorView.update(
                 .init(
@@ -76,6 +76,14 @@ final class GameScreenViewController: RainbowViewController, GameScreenInput {
         }
     }
     
+    func updateGameState(_ state: GameScreen.GameState) {
+        configureRightButton(state)
+    }
+    
+    func updateSpeed(_ value: String) {
+        speedButton.setTitle(value, for: .normal)
+    }
+    
     private func updateColorViewPosition(_ position: GameWordPosition) {
         switch position {
         case .middle:
@@ -89,9 +97,9 @@ final class GameScreenViewController: RainbowViewController, GameScreenInput {
             let y = CGFloat.random(in: (lowerY..<upperY))
             var x = CGFloat.random(in: (UIApplication.safeAreaInsets.left..<upperX))
             
-            if !speedView.isHidden {
-                if y + Layout.colorViewSize.height > speedView.frame.minY && x + Layout.colorViewSize.width > speedView.frame.minX {
-                    x = speedView.frame.minX - Layout.colorViewSize.width - Layout.speedViewInsets.right
+            if !speedButton.isHidden {
+                if y + Layout.colorViewSize.height > speedButton.frame.minY && x + Layout.colorViewSize.width > speedButton.frame.minX {
+                    x = speedButton.frame.minX - Layout.colorViewSize.width - Layout.speedViewInsets.right
                 }
             }
             
@@ -106,12 +114,8 @@ final class GameScreenViewController: RainbowViewController, GameScreenInput {
     private func configure() {
         view.backgroundColor = Colors.Background.lvl1
         
-        view.addSubview(speedView)
-        speedView.addSubview(speedLabel)
-        speedLabel.snp.makeConstraints {
-            $0.center.equalToSuperview()
-        }
-        speedView.snp.makeConstraints {
+        view.addSubview(speedButton)
+        speedButton.snp.makeConstraints {
             $0.size.equalTo(Layout.speedViewSize)
             $0.trailing.equalToSuperview().inset(Layout.speedViewInsets.right)
             $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(Layout.speedViewInsets.bottom)
@@ -119,12 +123,29 @@ final class GameScreenViewController: RainbowViewController, GameScreenInput {
         
         view.setNeedsLayout()
         view.layoutIfNeeded()
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: Images.pause, style: .plain, target: self, action: #selector(didTapPause))
+    }
+    
+    private func configureRightButton(_ state: GameScreen.GameState) {
+        switch state {
+        case .plaing:
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: Images.pause, style: .plain, target: self, action: #selector(didTapPause))
+        case .paused:
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: Images.play, style: .plain, target: self, action: #selector(didTapPlay))
+        }
     }
     
     @objc
     private func didTapPause() {
         presenter.pause()
+    }
+    
+    @objc
+    private func didTapPlay() {
+        presenter.play()
+    }
+    
+    @objc
+    private func didTapSpeed() {
+        speedButtonHandler?()
     }
 }

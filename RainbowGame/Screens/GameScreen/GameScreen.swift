@@ -42,5 +42,13 @@ extension GameScreen {
         let color: Color?
         let wordPosition: GameWordPosition
         let speed: String?
+        let speedClosure: (() -> Void)?
+    }
+}
+
+extension GameScreen {
+    enum GameState {
+        case plaing
+        case paused
     }
 }
