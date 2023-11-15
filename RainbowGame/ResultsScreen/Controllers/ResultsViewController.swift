@@ -15,11 +15,11 @@ class ResultsViewController: RainbowViewController, UITableViewDataSource, UITab
     
     private let tableView: UITableView = {
         let table = UITableView()
-        table.backgroundColor                           = .white
-        table.separatorStyle                            = .none
-        table.allowsSelection                           = false
-        table.allowsSelectionDuringEditing              = false
-        table.showsVerticalScrollIndicator              = false
+        table.backgroundColor = .white
+        table.separatorStyle = .none
+        table.allowsSelection = false
+        table.allowsSelectionDuringEditing = false
+        table.showsVerticalScrollIndicator = false
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
@@ -28,38 +28,38 @@ class ResultsViewController: RainbowViewController, UITableViewDataSource, UITab
         let button = UIButton(type: .system)
         button.setTitle("Очистить Результаты", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.backgroundColor                              = .red
-        button.layer.cornerRadius                           = 25
-        button.titleLabel?.font                             = .boldSystemFont(ofSize: 25)
-        button.translatesAutoresizingMaskIntoConstraints    = false
-        button.layer.shadowColor                            = UIColor.black.cgColor
-        button.layer.shadowOpacity                          = 0.3
-        button.layer.shadowOffset                           = CGSizeZero
-        button.layer.shadowRadius                           = 3
+        button.backgroundColor = .red
+        button.layer.cornerRadius = 25
+        button.titleLabel?.font = .boldSystemFont(ofSize: 25)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.3
+        button.layer.shadowOffset = CGSizeZero
+        button.layer.shadowRadius = 3
         return button
     }()
     
     private let bestResultLabel: UILabel = {
         let label = UILabel()
-        label.font                                      = .boldSystemFont(ofSize: 20)
-        label.textColor                                 = .black
-        label.textAlignment                             = .left
-        label.text                                      = "Лучший результат: типа время)"
+        label.font = .boldSystemFont(ofSize: 20)
+        label.textColor = .black
+        label.textAlignment = .left
+        label.text = "Лучший результат: типа время)"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let emptyTableLabel: UILabel = {
         let label = UILabel()
-        label.isHidden                                   = true
-        label.font                                      = .boldSystemFont(ofSize: 25)
-        label.textColor                                 = .black
-        label.textAlignment                             = .center
-        label.numberOfLines                             = 2
-        label.text                                      = """
-                                                            Пока что здесь пусто
-                                                            :)
-                                                            """
+        label.isHidden = true
+        label.font = .boldSystemFont(ofSize: 25)
+        label.textColor = .black
+        label.textAlignment = .center
+        label.numberOfLines = 2
+        label.text = """
+                      Пока что здесь пусто
+                      :)
+                      """
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -81,8 +81,8 @@ class ResultsViewController: RainbowViewController, UITableViewDataSource, UITab
     // MARK: - Setups
     private func setupStackView() {
         let stackView = UIStackView(arrangedSubviews: [tableView, bestResultLabel, clearButton, emptyTableLabel])
-        stackView.axis                                      = .vertical
-        stackView.spacing                                   = 10
+        stackView.axis = .vertical
+        stackView.spacing = 10
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         
@@ -104,9 +104,9 @@ class ResultsViewController: RainbowViewController, UITableViewDataSource, UITab
     
     private func setupTableView() {
         view.addSubview(tableView)
-        tableView.dataSource        = self
-        tableView.delegate          = self
-        tableView.separatorStyle    = .none
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.separatorStyle = .none
         tableView.register(ResultCell.self, forCellReuseIdentifier: "resultCell")
         
         NSLayoutConstraint.activate([
@@ -148,11 +148,10 @@ class ResultsViewController: RainbowViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell    = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as! ResultCell
         let result  = results[indexPath.row]
+
         cell.configure(with: result)
         cell.backgroundColor = .white
     
         return cell
     }
-    
-    
 }
