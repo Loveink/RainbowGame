@@ -96,7 +96,7 @@ class ResultCell: UITableViewCell {
     func configure(with result: GameResult) {
         speedLabel.text = "Скорость: \(result.speed)x"
         scoreLabel.text = "\(result.score)/\(result.totalWords)"
-        timeLabel.text = result.time
+        timeLabel.text = "\(result.time)"
         orderLabel.text = "Игра №\(result.orderNumber)"
     }
     

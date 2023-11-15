@@ -20,7 +20,6 @@ final class RainbowNavigationController: UINavigationController {
         appearance.configureWithTransparentBackground()
         
         appearance.titleTextAttributes = [.font: UIFont.systemFont(ofSize: 30)]
-        appearance.setBackIndicatorImage(Images.arrowLeft, transitionMaskImage: Images.arrowLeft)
         
         navigationBar.standardAppearance = appearance
         navigationBar.compactAppearance = appearance

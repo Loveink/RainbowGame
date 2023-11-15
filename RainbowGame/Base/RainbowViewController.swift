@@ -11,7 +11,7 @@ class RainbowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.backButtonTitle = ""
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: Images.arrowLeft, style: .plain, target: self, action: #selector(didTapBackBarButtonItem(_:)))
     }
     
     @objc

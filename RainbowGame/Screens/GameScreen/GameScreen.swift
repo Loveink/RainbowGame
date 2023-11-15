@@ -12,7 +12,7 @@ final class GameScreen {
     weak var controller: UIViewController?
     
     func build() -> UIViewController {
-        let presenter = GameScreenPresenter()
+        let presenter = GameScreenPresenter(storage: StorageService())
         let controller = GameScreenViewController()
         controller.presenter = presenter
         presenter.screen = self
@@ -40,5 +40,15 @@ extension GameScreen {
     }
     struct ViewModel {
         let color: Color?
+        let wordPosition: GameWordPosition
+        let speed: String?
+        let speedClosure: (() -> Void)?
+    }
+}
+
+extension GameScreen {
+    enum GameState {
+        case plaing
+        case paused
     }
 }
