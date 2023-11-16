@@ -22,15 +22,17 @@ class  RulesViewController: UIViewController {
 //        return label
 //    }()
     
-    let topMainLabel: UILabel = {
-        let label = UILabel()
-        label.text = "На экране в случайном месте появляется слово, обозначающее цвет, например: написано «синий»:"
-        label.textAlignment = .natural
-        label.font = UIFont.systemFont(ofSize: 16.0, weight: .regular)
-        label.textColor = .black
-        label.numberOfLines = 0
-        return label
-    }()
+   let topMainLabel = UILabel.makeLabel(text: "На экране в случайном месте появляется слово, обозначающее цвет, например: написано «синий»:", font: UIFont.systemFont(ofSize: 16.0, weight: .regular), textColor: .black, textAlignment: .natural, numberOfLines: 0)
+//    let topMainLabel: UILabel = {
+//        let label = UILabel()
+//        label.text = "На экране в случайном месте появляется слово, обозначающее цвет, например: написано «синий»:"
+//        label.textAlignment = .natural
+//        label.font = UIFont.systemFont(ofSize: 16.0, weight: .regular)
+//        label.textColor = .black
+//        label.numberOfLines = 0
+//        return label
+//    }()
+  
     let aboveleftExampleLabel: UILabel = {
         let label = UILabel()
         label.text = "подложка выключена"
