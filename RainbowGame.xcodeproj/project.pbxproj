@@ -16,6 +16,7 @@
 		57BE157D2B01166A001FA77E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE157C2B01166A001FA77E /* SettingsViewController.swift */; };
 		57BE157F2B01167A001FA77E /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE157E2B01167A001FA77E /* ResultsViewController.swift */; };
 		57BE15812B01168B001FA77E /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE15802B01168B001FA77E /* RulesViewController.swift */; };
+		CE3B6B802B03E80A00E4DD32 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE3B6B7F2B03E80A00E4DD32 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3B6B802B03E80A00E4DD32 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +150,9 @@
 			dependencies = (
 			);
 			name = RainbowGame;
+			packageProductDependencies = (
+				CE3B6B7F2B03E80A00E4DD32 /* SnapKit */,
+			);
 			productName = RainbowGame;
 			productReference = 57BE155C2B011544001FA77E /* RainbowGame.app */;
 			productType = "com.apple.product-type.application";
@@ -167,7 +172,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 57BE15572B011544001FA77E /* Build configuration list for PBXProject "RainbowGame 21.06.10" */;
+			buildConfigurationList = 57BE15572B011544001FA77E /* Build configuration list for PBXProject "RainbowGame" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -176,6 +181,9 @@
 				Base,
 			);
 			mainGroup = 57BE15532B011544001FA77E;
+			packageReferences = (
+				CE3B6B7E2B03E80A00E4DD32 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 57BE155D2B011544001FA77E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -359,7 +367,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -390,7 +398,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -410,7 +418,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		57BE15572B011544001FA77E /* Build configuration list for PBXProject "RainbowGame 21.06.10" */ = {
+		57BE15572B011544001FA77E /* Build configuration list for PBXProject "RainbowGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				57BE156E2B011547001FA77E /* Debug */,
@@ -429,6 +437,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE3B6B7E2B03E80A00E4DD32 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE3B6B7F2B03E80A00E4DD32 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE3B6B7E2B03E80A00E4DD32 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 57BE15542B011544001FA77E /* Project object */;
 }
