@@ -17,6 +17,7 @@
 		57BE15782B011626001FA77E /* GameScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE15772B011626001FA77E /* GameScreenViewController.swift */; };
 		57BE157D2B01166A001FA77E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE157C2B01166A001FA77E /* SettingsViewController.swift */; };
 		57BE15812B01168B001FA77E /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE15802B01168B001FA77E /* RulesViewController.swift */; };
+		57C093B82B063CA30024E552 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C093B72B063CA30024E552 /* UILabel+Extension.swift */; };
 		57C8F23B2B03F1D60001DD19 /* SettingBackgroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C8F2382B03F1D60001DD19 /* SettingBackgroundCell.swift */; };
 		57C8F23C2B03F1D60001DD19 /* SettingSpeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C8F2392B03F1D60001DD19 /* SettingSpeedCell.swift */; };
 		57C8F23D2B03F1D60001DD19 /* SettingTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C8F23A2B03F1D60001DD19 /* SettingTimeCell.swift */; };
@@ -48,6 +49,7 @@
 		57BE15772B011626001FA77E /* GameScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenViewController.swift; sourceTree = "<group>"; };
 		57BE157C2B01166A001FA77E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		57BE15802B01168B001FA77E /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
+		57C093B72B063CA30024E552 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		57C8F2382B03F1D60001DD19 /* SettingBackgroundCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingBackgroundCell.swift; sourceTree = "<group>"; };
 		57C8F2392B03F1D60001DD19 /* SettingSpeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingSpeedCell.swift; sourceTree = "<group>"; };
 		57C8F23A2B03F1D60001DD19 /* SettingTimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTimeCell.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			children = (
 				24A047E92B03ED5800516074 /* CustomButton.swift */,
 				774CD78F2B017DC4007284AE /* UIApplication+Extension.swift */,
+				57C093B72B063CA30024E552 /* UILabel+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				57C8F23D2B03F1D60001DD19 /* SettingTimeCell.swift in Sources */,
 				CB43A2542B02BDE80021904B /* ResultCell.swift in Sources */,
 				CB43A2522B02BDBF0021904B /* ResultsViewController.swift in Sources */,
+				57C093B82B063CA30024E552 /* UILabel+Extension.swift in Sources */,
 				57BE15602B011544001FA77E /* AppDelegate.swift in Sources */,
 				57C8F23B2B03F1D60001DD19 /* SettingBackgroundCell.swift in Sources */,
 				57BE157D2B01166A001FA77E /* SettingsViewController.swift in Sources */,
@@ -487,7 +491,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -544,7 +548,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

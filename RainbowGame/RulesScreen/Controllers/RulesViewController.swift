@@ -12,14 +12,15 @@ class  RulesViewController: UIViewController {
     
     let rulesView = UIView()
     
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "ПРАВИЛА ИГРЫ"
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 20.0, weight: .bold)
-        label.textColor = .black
-        return label
-    }()
+    let titleLabel = UILabel.makeLabel(text: "ПРАВИЛА ИГРЫ", font: UIFont.systemFont(ofSize: 20.0, weight: .bold), textColor: .black, textAlignment: .center)
+//    let titleLabel: UILabel = {
+//        let label = UILabel()
+//        label.text = "ПРАВИЛА ИГРЫ"
+//        label.textAlignment = .center
+//        label.font = UIFont.systemFont(ofSize: 20.0, weight: .bold)
+//        label.textColor = .black
+//        return label
+//    }()
     
     let topMainLabel: UILabel = {
         let label = UILabel()
