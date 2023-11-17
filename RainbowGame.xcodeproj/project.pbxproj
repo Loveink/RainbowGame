@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24A047EA2B03ED5800516074 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A047E92B03ED5800516074 /* CustomButton.swift */; };
+		24A047EC2B03F0BE00516074 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A047EB2B03F0BE00516074 /* MainViewController.swift */; };
+		24A047EF2B03F30F00516074 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 24A047EE2B03F30F00516074 /* SnapKit */; };
 		57BE15602B011544001FA77E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE155F2B011544001FA77E /* AppDelegate.swift */; };
 		57BE15622B011544001FA77E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE15612B011544001FA77E /* SceneDelegate.swift */; };
-		57BE15642B011544001FA77E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE15632B011544001FA77E /* MainViewController.swift */; };
 		57BE15692B011547001FA77E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57BE15682B011547001FA77E /* Assets.xcassets */; };
 		57BE156C2B011547001FA77E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57BE156A2B011547001FA77E /* LaunchScreen.storyboard */; };
 		57BE15782B011626001FA77E /* GameScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE15772B011626001FA77E /* GameScreenViewController.swift */; };
 		57BE157D2B01166A001FA77E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE157C2B01166A001FA77E /* SettingsViewController.swift */; };
 		57BE15812B01168B001FA77E /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE15802B01168B001FA77E /* RulesViewController.swift */; };
+		57C8F23B2B03F1D60001DD19 /* SettingBackgroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C8F2382B03F1D60001DD19 /* SettingBackgroundCell.swift */; };
+		57C8F23C2B03F1D60001DD19 /* SettingSpeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C8F2392B03F1D60001DD19 /* SettingSpeedCell.swift */; };
+		57C8F23D2B03F1D60001DD19 /* SettingTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C8F23A2B03F1D60001DD19 /* SettingTimeCell.swift */; };
 		770AD2612B026ACA00150DCF /* RainbowNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AD2602B026ACA00150DCF /* RainbowNavigationController.swift */; };
 		770AD2642B026B8200150DCF /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AD2632B026B8200150DCF /* Images.swift */; };
 		770AD2662B026F0700150DCF /* RainbowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AD2652B026F0700150DCF /* RainbowViewController.swift */; };
@@ -24,26 +29,30 @@
 		774CD7822B016F06007284AE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774CD7812B016F06007284AE /* Colors.xcassets */; };
 		774CD7842B016F2F007284AE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD7832B016F2F007284AE /* Colors.swift */; };
 		774CD7862B016FE0007284AE /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD7852B016FE0007284AE /* ColorView.swift */; };
-		774CD78A2B01710B007284AE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 774CD7892B01710B007284AE /* SnapKit */; };
-		774CD78C2B01710B007284AE /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 774CD78B2B01710B007284AE /* SnapKit-Dynamic */; };
 		774CD78E2B017C5E007284AE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD78D2B017C5E007284AE /* Fonts.swift */; };
 		774CD7902B017DC4007284AE /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774CD78F2B017DC4007284AE /* UIApplication+Extension.swift */; };
 		CB43A2522B02BDBF0021904B /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43A2512B02BDBF0021904B /* ResultsViewController.swift */; };
 		CB43A2542B02BDE80021904B /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43A2532B02BDE80021904B /* ResultCell.swift */; };
 		CB43A2562B02BDFE0021904B /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43A2552B02BDFE0021904B /* GameResult.swift */; };
 		CB43A2582B02BE120021904B /* GameResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43A2572B02BE120021904B /* GameResults.swift */; };
+		CBA404552B04B02600EEFD8D /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA404542B04B02600EEFD8D /* Shadow.swift */; };
+		CBA404572B04C96B00EEFD8D /* Colors Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA404562B04C96B00EEFD8D /* Colors Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24A047E92B03ED5800516074 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		24A047EB2B03F0BE00516074 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		57BE155C2B011544001FA77E /* RainbowGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RainbowGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BE155F2B011544001FA77E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57BE15612B011544001FA77E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		57BE15632B011544001FA77E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		57BE15682B011547001FA77E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57BE156B2B011547001FA77E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57BE15772B011626001FA77E /* GameScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenViewController.swift; sourceTree = "<group>"; };
 		57BE157C2B01166A001FA77E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		57BE15802B01168B001FA77E /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
+		57C8F2382B03F1D60001DD19 /* SettingBackgroundCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingBackgroundCell.swift; sourceTree = "<group>"; };
+		57C8F2392B03F1D60001DD19 /* SettingSpeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingSpeedCell.swift; sourceTree = "<group>"; };
+		57C8F23A2B03F1D60001DD19 /* SettingTimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTimeCell.swift; sourceTree = "<group>"; };
 		57D927662B014AC400904463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		770AD2602B026ACA00150DCF /* RainbowNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowNavigationController.swift; sourceTree = "<group>"; };
 		770AD2632B026B8200150DCF /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -60,6 +69,8 @@
 		CB43A2532B02BDE80021904B /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		CB43A2552B02BDFE0021904B /* GameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
 		CB43A2572B02BE120021904B /* GameResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResults.swift; sourceTree = "<group>"; };
+		CBA404542B04B02600EEFD8D /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		CBA404562B04C96B00EEFD8D /* Colors Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				774CD78A2B01710B007284AE /* SnapKit in Frameworks */,
-				774CD78C2B01710B007284AE /* SnapKit-Dynamic in Frameworks */,
+				24A047EF2B03F30F00516074 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +88,7 @@
 		57A8F2A82B01528000BCFD61 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				57BE15632B011544001FA77E /* MainViewController.swift */,
+				24A047EB2B03F0BE00516074 /* MainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -119,31 +129,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		57A8F2B12B0152DC00BCFD61 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				57BE157E2B01167A001FA77E /* ResultsViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		57A8F2B22B0152E400BCFD61 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		57A8F2B32B0152E800BCFD61 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		57A8F2B42B0152F200BCFD61 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				57C8F2382B03F1D60001DD19 /* SettingBackgroundCell.swift */,
+				57C8F2392B03F1D60001DD19 /* SettingSpeedCell.swift */,
+				57C8F23A2B03F1D60001DD19 /* SettingTimeCell.swift */,
 				57BE157C2B01166A001FA77E /* SettingsViewController.swift */,
 			);
 			path = Controllers;
@@ -271,23 +262,6 @@
 			path = SettingsScreen;
 			sourceTree = "<group>";
 		};
-		CB43A24E2B02BD910021904B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				CB43A2552B02BDFE0021904B /* GameResult.swift */,
-				CB43A2572B02BE120021904B /* GameResults.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		CB43A24F2B02BD980021904B /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CB43A2532B02BDE80021904B /* ResultCell.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		770AD2622B026AE000150DCF /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,20 +279,40 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		774CD7912B017DDC007284AE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				24A047E92B03ED5800516074 /* CustomButton.swift */,
+				774CD78F2B017DC4007284AE /* UIApplication+Extension.swift */,
+				CBA404542B04B02600EEFD8D /* Shadow.swift */,
+				CBA404562B04C96B00EEFD8D /* Colors Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CB43A24E2B02BD910021904B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CB43A2552B02BDFE0021904B /* GameResult.swift */,
+				CB43A2572B02BE120021904B /* GameResults.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CB43A24F2B02BD980021904B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB43A2532B02BDE80021904B /* ResultCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CB43A2502B02BDA30021904B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				CB43A2512B02BDBF0021904B /* ResultsViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		774CD7912B017DDC007284AE /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				774CD78F2B017DC4007284AE /* UIApplication+Extension.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,8 +332,7 @@
 			);
 			name = RainbowGame;
 			packageProductDependencies = (
-				774CD7892B01710B007284AE /* SnapKit */,
-				774CD78B2B01710B007284AE /* SnapKit-Dynamic */,
+				24A047EE2B03F30F00516074 /* SnapKit */,
 			);
 			productName = RainbowGame;
 			productReference = 57BE155C2B011544001FA77E /* RainbowGame.app */;
@@ -370,7 +363,7 @@
 			);
 			mainGroup = 57BE15532B011544001FA77E;
 			packageReferences = (
-				774CD7882B01710B007284AE /* XCRemoteSwiftPackageReference "SnapKit" */,
+				24A047ED2B03F30F00516074 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 57BE155D2B011544001FA77E /* Products */;
 			projectDirPath = "";
@@ -399,21 +392,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24A047EC2B03F0BE00516074 /* MainViewController.swift in Sources */,
 				774CD7862B016FE0007284AE /* ColorView.swift in Sources */,
 				57BE15812B01168B001FA77E /* RulesViewController.swift in Sources */,
+				57C8F23C2B03F1D60001DD19 /* SettingSpeedCell.swift in Sources */,
 				774CD78E2B017C5E007284AE /* Fonts.swift in Sources */,
 				774CD7842B016F2F007284AE /* Colors.swift in Sources */,
+				CBA404572B04C96B00EEFD8D /* Colors Extension.swift in Sources */,
 				57BE15782B011626001FA77E /* GameScreenViewController.swift in Sources */,
 				774CD77C2B016CB0007284AE /* GameScreenPresenter.swift in Sources */,
 				774CD7902B017DC4007284AE /* UIApplication+Extension.swift in Sources */,
 				770AD2612B026ACA00150DCF /* RainbowNavigationController.swift in Sources */,
-				57BE15642B011544001FA77E /* MainViewController.swift in Sources */,
 				770AD2662B026F0700150DCF /* RainbowViewController.swift in Sources */,
 				774CD77E2B016CB5007284AE /* GameScreen.swift in Sources */,
+				24A047EA2B03ED5800516074 /* CustomButton.swift in Sources */,
+				57C8F23D2B03F1D60001DD19 /* SettingTimeCell.swift in Sources */,
 				CB43A2542B02BDE80021904B /* ResultCell.swift in Sources */,
+				CBA404552B04B02600EEFD8D /* Shadow.swift in Sources */,
 				CB43A2582B02BE120021904B /* GameResults.swift in Sources */,
 				CB43A2522B02BDBF0021904B /* ResultsViewController.swift in Sources */,
 				57BE15602B011544001FA77E /* AppDelegate.swift in Sources */,
+				57C8F23B2B03F1D60001DD19 /* SettingBackgroundCell.swift in Sources */,
 				57BE157D2B01166A001FA77E /* SettingsViewController.swift in Sources */,
 				774CD7802B016D1F007284AE /* GameScreenProtocols.swift in Sources */,
 				770AD2642B026B8200150DCF /* Images.swift in Sources */,
@@ -569,7 +568,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -600,7 +599,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -641,26 +640,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		774CD7882B01710B007284AE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		24A047ED2B03F30F00516074 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
-				kind = exactVersion;
-				version = 5.6.0;
+				branch = develop;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		774CD7892B01710B007284AE /* SnapKit */ = {
+		24A047EE2B03F30F00516074 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 774CD7882B01710B007284AE /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 24A047ED2B03F30F00516074 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		774CD78B2B01710B007284AE /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 774CD7882B01710B007284AE /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
