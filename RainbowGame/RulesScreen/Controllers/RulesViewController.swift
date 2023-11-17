@@ -7,84 +7,29 @@
 
 import UIKit
 import SnapKit
-class  RulesViewController: UIViewController {
+class  RulesViewController: RainbowViewController {
     //MARK: - UI elements
     
     let rulesView = UIView()
     
-    let titleLabel = UILabel.makeLabel(text: "ПРАВИЛА ИГРЫ", font: UIFont.systemFont(ofSize: 20.0, weight: .bold), textColor: .black, textAlignment: .center)
-//    let titleLabel: UILabel = {
-//        let label = UILabel()
-//        label.text = "ПРАВИЛА ИГРЫ"
-//        label.textAlignment = .center
-//        label.font = UIFont.systemFont(ofSize: 20.0, weight: .bold)
-//        label.textColor = .black
-//        return label
-//    }()
+    let titleLabel = UILabel.makeLabel(text: "ПРАВИЛА ИГРЫ", font: UIFont.systemFont(ofSize: 30.0, weight: .bold))
     
-   let topMainLabel = UILabel.makeLabel(text: "На экране в случайном месте появляется слово, обозначающее цвет, например: написано «синий»:", font: UIFont.systemFont(ofSize: 16.0, weight: .regular), textColor: .black, textAlignment: .natural, numberOfLines: 0)
-//    let topMainLabel: UILabel = {
-//        let label = UILabel()
-//        label.text = "На экране в случайном месте появляется слово, обозначающее цвет, например: написано «синий»:"
-//        label.textAlignment = .natural
-//        label.font = UIFont.systemFont(ofSize: 16.0, weight: .regular)
-//        label.textColor = .black
-//        label.numberOfLines = 0
-//        return label
-//    }()
+   let topMainLabel = UILabel.makeLabel(text: "На экране в случайном месте появляется слово, обозначающее цвет, например: написано «синий»:", font: UIFont.systemFont(ofSize: 18.0, weight: .regular), textAlignment: .natural, numberOfLines: 0)
   
-    let aboveleftExampleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "подложка выключена"
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 12.0, weight: .regular)
-        label.textColor = .black
-        return label
-    }()
-    let aboveRightExampleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "подложка включена"
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 12.0, weight: .regular)
-        label.textColor = .black
-        return label
-    }()
-    let RightExampleButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Синий", for: .normal)
-        button.layer.cornerRadius = 5
-        button.backgroundColor = UIColor(red: 32/255, green: 203/255, blue: 61/255, alpha: 1)
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOffset = .init(width: 0, height: 4)
-        button.layer.shadowOpacity = 0.25
-        return button
-    }()
-    let leftExampleButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Синий", for: .normal)
-        button.setTitleColor(UIColor(red: 32/255, green: 203/255, blue: 61/255, alpha: 1), for: .normal)
-        button.backgroundColor = .clear
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOffset = .init(width: 0, height: 4)
-        button.layer.shadowOpacity = 0.25
-        return button
-    }()
+    let aboveleftExampleLabel = UILabel.makeLabel(text: "подложка выключена", font: UIFont.systemFont(ofSize: 13.0, weight: .regular))
     
-    let bottomMainLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Нужно произнести вслух цвет слова (если опция «подложка для букв» выключена) или цвет фона, на котором написано слово (если опция «подложка для букв» включена): говорим «зеленый». \n В игре можно изменять скорость от 1x до 5x. А так же длительность игры."
-        label.textAlignment = .natural
-        label.font = UIFont.systemFont(ofSize: 16.0, weight: .regular)
-        label.textColor = .black
-        label.numberOfLines = 0
-        return label
-    }()
-        
-    
-    
+    let aboveRightExampleLabel = UILabel.makeLabel(text: "подложка включена", font: UIFont.systemFont(ofSize: 13.0, weight: .regular))
+
+    let RightExampleButton = CustomButton(customTitle: "Синий", customBackgroundColor: UIColor(red: 0/255, green: 181/255, blue: 101/255, alpha: 1), customShadowColor: UIColor.black.cgColor)
+
+    let leftExampleButton = CustomButton(customTitle: "Синий", customBackgroundColor: .clear, customTitleColor: UIColor(red: 0/255, green: 181/255, blue: 101/255, alpha: 1), customShadowColor: UIColor.clear.cgColor)
+ 
+    let bottomMainLabel = UILabel.makeLabel(text: "Нужно произнести вслух цвет слова (если опция «подложка для букв» выключена) или цвет фона, на котором написано слово (если опция «подложка для букв» включена): говорим «зеленый». \n В игре можно изменять скорость от 1x до 5x. А так же длительность игры.", font: UIFont.systemFont(ofSize: 18.0, weight: .regular), textAlignment: .natural, numberOfLines: 0)
+
     //MARK: - ViewController Life
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Помощь"
         addView()
         setUpUI()
     }
@@ -110,15 +55,13 @@ class  RulesViewController: UIViewController {
         
         
         rulesView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(40)
-            //make.top.equalToSuperview().inset(160)
+            make.leading.trailing.equalToSuperview().inset(30)
             make.centerY.equalToSuperview()
             make.bottom.equalTo(bottomMainLabel).offset(20)
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(20)
-            make.top.equalToSuperview().inset(20)
+            make.top.left.right.equalToSuperview().inset(20)
             make.height.equalTo(20)
         }
         
@@ -152,6 +95,7 @@ class  RulesViewController: UIViewController {
             make.top.equalTo(leftExampleButton.snp.bottom).offset(15)
             make.leading.trailing.equalTo(topMainLabel)
         }
+        
         let attributedString2 = NSMutableAttributedString(string: bottomMainLabel.text!)
         attributedString2.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: NSRange(location: 160, length: 18))
         bottomMainLabel.attributedText = attributedString2

@@ -20,6 +20,12 @@ class CustomButton: UIButton {
 			backgroundColor = customBackgroundColor
 		}
 	}
+    
+    var customTitleColor: UIColor = .white {
+        didSet {
+            setTitleColor(customTitleColor, for: .normal)
+        }
+    }
 	
 	var customShadowColor: CGColor? {
 		didSet {
@@ -27,10 +33,11 @@ class CustomButton: UIButton {
 		}
 	}
 		
-	init(customTitle: String, customBackgroundColor: UIColor, customShadowColor: CGColor) {
+    init(customTitle: String, customBackgroundColor: UIColor, customTitleColor: UIColor = .white, customShadowColor: CGColor) {
 		super.init(frame: .zero)
 		self.customTitle = customTitle
 		self.customBackgroundColor = customBackgroundColor
+        self.customTitleColor = customTitleColor
 		self.customShadowColor = customShadowColor
 		setupButton()
 	}
@@ -43,6 +50,7 @@ class CustomButton: UIButton {
 		self.backgroundColor = customBackgroundColor
 		self.setTitle(customTitle, for: .normal)
 		self.titleLabel?.font = .systemFont(ofSize: 20.0, weight: .medium)
+        self.setTitleColor(customTitleColor, for: .normal)
 		self.layer.shadowColor = customShadowColor
 		self.layer.shadowOffset = CGSize(width: 0.0, height: 2.5)
 		self.layer.shadowOpacity = 0.7
