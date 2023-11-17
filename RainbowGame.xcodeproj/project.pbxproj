@@ -21,6 +21,12 @@
 		57C8F23B2B03F1D60001DD19 /* SettingBackgroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C8F2382B03F1D60001DD19 /* SettingBackgroundCell.swift */; };
 		57C8F23C2B03F1D60001DD19 /* SettingSpeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C8F2392B03F1D60001DD19 /* SettingSpeedCell.swift */; };
 		57C8F23D2B03F1D60001DD19 /* SettingTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C8F23A2B03F1D60001DD19 /* SettingTimeCell.swift */; };
+		5E4EE3CF2B079D410098E4B4 /* SettingPositionWordsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4EE3CE2B079D400098E4B4 /* SettingPositionWordsCell.swift */; };
+		5E4EE3D12B079DB60098E4B4 /* SettingFontSizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4EE3D02B079DB60098E4B4 /* SettingFontSizeCell.swift */; };
+		5E4EE3D32B07AA190098E4B4 /* SettingChecksGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4EE3D22B07AA190098E4B4 /* SettingChecksGameCell.swift */; };
+		5E4EE3D52B07B23A0098E4B4 /* SettingColorBackgroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4EE3D42B07B23A0098E4B4 /* SettingColorBackgroundCell.swift */; };
+		5E4EE3D72B07B47D0098E4B4 /* SettingColorLettersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4EE3D62B07B47D0098E4B4 /* SettingColorLettersCell.swift */; };
+		5E4EE3D92B07B6280098E4B4 /* CustomButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4EE3D82B07B6280098E4B4 /* CustomButtonCell.swift */; };
 		770AD2612B026ACA00150DCF /* RainbowNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AD2602B026ACA00150DCF /* RainbowNavigationController.swift */; };
 		770AD2642B026B8200150DCF /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AD2632B026B8200150DCF /* Images.swift */; };
 		770AD2662B026F0700150DCF /* RainbowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AD2652B026F0700150DCF /* RainbowViewController.swift */; };
@@ -54,6 +60,12 @@
 		57C8F2392B03F1D60001DD19 /* SettingSpeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingSpeedCell.swift; sourceTree = "<group>"; };
 		57C8F23A2B03F1D60001DD19 /* SettingTimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTimeCell.swift; sourceTree = "<group>"; };
 		57D927662B014AC400904463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E4EE3CE2B079D400098E4B4 /* SettingPositionWordsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPositionWordsCell.swift; sourceTree = "<group>"; };
+		5E4EE3D02B079DB60098E4B4 /* SettingFontSizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFontSizeCell.swift; sourceTree = "<group>"; };
+		5E4EE3D22B07AA190098E4B4 /* SettingChecksGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingChecksGameCell.swift; sourceTree = "<group>"; };
+		5E4EE3D42B07B23A0098E4B4 /* SettingColorBackgroundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingColorBackgroundCell.swift; sourceTree = "<group>"; };
+		5E4EE3D62B07B47D0098E4B4 /* SettingColorLettersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingColorLettersCell.swift; sourceTree = "<group>"; };
+		5E4EE3D82B07B6280098E4B4 /* CustomButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonCell.swift; sourceTree = "<group>"; };
 		770AD2602B026ACA00150DCF /* RainbowNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowNavigationController.swift; sourceTree = "<group>"; };
 		770AD2632B026B8200150DCF /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		770AD2652B026F0700150DCF /* RainbowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowViewController.swift; sourceTree = "<group>"; };
@@ -130,10 +142,16 @@
 		57A8F2B42B0152F200BCFD61 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				57BE157C2B01166A001FA77E /* SettingsViewController.swift */,
 				57C8F2382B03F1D60001DD19 /* SettingBackgroundCell.swift */,
 				57C8F2392B03F1D60001DD19 /* SettingSpeedCell.swift */,
 				57C8F23A2B03F1D60001DD19 /* SettingTimeCell.swift */,
-				57BE157C2B01166A001FA77E /* SettingsViewController.swift */,
+				5E4EE3D02B079DB60098E4B4 /* SettingFontSizeCell.swift */,
+				5E4EE3D22B07AA190098E4B4 /* SettingChecksGameCell.swift */,
+				5E4EE3CE2B079D400098E4B4 /* SettingPositionWordsCell.swift */,
+				5E4EE3D42B07B23A0098E4B4 /* SettingColorBackgroundCell.swift */,
+				5E4EE3D62B07B47D0098E4B4 /* SettingColorLettersCell.swift */,
+				5E4EE3D82B07B6280098E4B4 /* CustomButtonCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -409,19 +427,25 @@
 				770AD2612B026ACA00150DCF /* RainbowNavigationController.swift in Sources */,
 				77599F492B03F59C00C0D9B6 /* StorageService.swift in Sources */,
 				770AD2662B026F0700150DCF /* RainbowViewController.swift in Sources */,
+				5E4EE3D12B079DB60098E4B4 /* SettingFontSizeCell.swift in Sources */,
 				774CD77E2B016CB5007284AE /* GameScreen.swift in Sources */,
 				24A047EA2B03ED5800516074 /* CustomButton.swift in Sources */,
 				57C8F23D2B03F1D60001DD19 /* SettingTimeCell.swift in Sources */,
 				CB43A2542B02BDE80021904B /* ResultCell.swift in Sources */,
+				5E4EE3D92B07B6280098E4B4 /* CustomButtonCell.swift in Sources */,
 				CB43A2522B02BDBF0021904B /* ResultsViewController.swift in Sources */,
 				57C093B82B063CA30024E552 /* UILabel+Extension.swift in Sources */,
 				57BE15602B011544001FA77E /* AppDelegate.swift in Sources */,
+				5E4EE3D52B07B23A0098E4B4 /* SettingColorBackgroundCell.swift in Sources */,
 				57C8F23B2B03F1D60001DD19 /* SettingBackgroundCell.swift in Sources */,
 				57BE157D2B01166A001FA77E /* SettingsViewController.swift in Sources */,
 				774CD7802B016D1F007284AE /* GameScreenProtocols.swift in Sources */,
+				5E4EE3D72B07B47D0098E4B4 /* SettingColorLettersCell.swift in Sources */,
+				5E4EE3CF2B079D410098E4B4 /* SettingPositionWordsCell.swift in Sources */,
 				770AD2642B026B8200150DCF /* Images.swift in Sources */,
 				57BE15622B011544001FA77E /* SceneDelegate.swift in Sources */,
 				CB43A2562B02BDFE0021904B /* GameResult.swift in Sources */,
+				5E4EE3D32B07AA190098E4B4 /* SettingChecksGameCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
