@@ -11,7 +11,7 @@ class MainViewController: RainbowViewController {
 	
 	/// three main buttons:
 	var newGameButton = CustomButton(customTitle: "Новая игра",
-									 customBackgroundColor: .red,
+                                     customBackgroundColor: .red,
 									 customShadowColor: UIColor.red.cgColor)
 	
 	var continueButton = CustomButton(customTitle: "Продолжить",

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GameResult {
+struct GameResult: Codable {
     let speed: Int
     let time: Float
     let score: Int

@@ -105,8 +105,7 @@
                 emptyTableLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
                 ])
         }
-        
-        
+
         private func setupTableView() {
             view.addSubview(tableView)
             tableView.dataSource = self
@@ -114,7 +113,6 @@
             tableView.separatorStyle = .none
             tableView.register(ResultCell.self, forCellReuseIdentifier: "resultCell")
         }
-        
         
         // Удалить, когда реализуем механизм сохранения данных
         private func loadResults() {
@@ -137,11 +135,7 @@
             gameResults.addResult(score: 7, totalWords: 10, time: 13.5, speed: 2)
             gameResults.addResult(score: 2, totalWords: 10, time: 2, speed: 2)
         }
-        
-       
-    
-        
-        
+
         @objc private func clearResults() {
             gameResults.clearResults()
             tableView.reloadData()
