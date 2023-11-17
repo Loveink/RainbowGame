@@ -10,14 +10,14 @@ class GameResults {
 
     private var results: [GameResult] = []
     
-    func addResult(score: Int, totalWords: Int, time: String, speed: Int) {
-        var result = GameResult(score: score, totalWords: totalWords, speed: speed, time: time)
+    func addResult(score: Int, totalWords: Int, time: Float, speed: Int) {
+        let result = GameResult(score: score, totalWords: totalWords, speed: speed, time: time)
         
         if results.count == 20 {
             results.removeFirst()
         }
-        
-        results.insert(result, at: 0)    }
+        results.insert(result, at: 0)   
+    }
 
     func getResults() -> [GameResult] {
         if results.count != 0 {
@@ -30,6 +30,19 @@ class GameResults {
             }
         }
         return results
+    }
+    
+    func getBestResult() -> String{
+        var precision = 0
+        var totalWords = 0
+        var currentScore = 0
+        for result in results {
+            if result.score/result.totalColors > precision {
+                currentScore = result.score
+                totalWords = result.totalColors
+            }
+        }
+        return "\(currentScore)/\(totalWords)"
     }
 
     func clearResults() {

@@ -9,16 +9,16 @@ import Foundation
 
 struct GameResult {
     let speed: Int
-    let time: String
+    let time: Float
     let score: Int
-    let totalWords: Int
+    let totalColors: Int
     var orderNumber: Int
 
-    init(score: Int, totalWords: Int, speed: Int, time: String) {
+    init(score: Int, totalWords: Int, speed: Int, time: Float) {
         self.speed = speed
         self.time = time
         self.score = score
-        self.totalWords = totalWords
+        self.totalColors = totalWords
         self.orderNumber = 0
     }
 }
