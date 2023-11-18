@@ -67,11 +67,11 @@ final class SettingsViewController: RainbowViewController, UICollectionViewDataS
         switch setting {
         case .gameTime:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SettingsSliderCell.id, for: indexPath) as! SettingsSliderCell
-            cell.configure(title: setting.title, minValue: 1, maxValue: 20, currentValue: storage.gameTime)
+            cell.configure(title: setting.title, minValue: 1, maxValue: 20, currentValue: storage.gameTime/60)
             cell.sliderDidChange = {
                 [weak self] value in
                 
-                self?.storage.gameTime = value
+              self?.storage.gameTime = value * 60
             }
             return cell
             

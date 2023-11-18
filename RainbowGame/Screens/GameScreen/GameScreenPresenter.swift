@@ -92,7 +92,7 @@ final class GameScreenPresenter: GameScreenOutput {
         roundPoints = 0
         remaningTime = roundTime
         interColorTime = colorChangeTime
-        view?.updateTitle("\(remaningTime)")
+        view?.updateTitle(formattedTime(time: remaningTime))
         updateColor()
     }
     
@@ -113,8 +113,8 @@ final class GameScreenPresenter: GameScreenOutput {
             return
         }
         remaningTime -= 1
-        view?.updateTitle("\(remaningTime)")
-        
+        view?.updateTitle(formattedTime(time: remaningTime))
+
         interColorTime -= 1
         if interColorTime <= 0 {
             updateColor()
@@ -153,6 +153,12 @@ final class GameScreenPresenter: GameScreenOutput {
             )
         )
     }
+
+  private func formattedTime(time: Int) -> String {
+      let minutes = time / 60
+      let seconds = time % 60
+      return String(format: "%02d:%02d", minutes, seconds)
+  }
 }
 
 extension GameColor {
