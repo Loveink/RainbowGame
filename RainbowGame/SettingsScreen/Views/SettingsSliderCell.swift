@@ -1,5 +1,5 @@
 //
-//  SettingSpeedCell.swift
+//  SettingsSliderCell.swift
 //  RainbowGame
 //
 //  Created by Наталья Миронова on 14.11.2023.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class SettingSpeedCell: UICollectionViewCell {
+final class SettingsSliderCell: SettingsCollectionCellView {
     
-    static let id = "settingSpeedCell"
+    static let id = "SettingsSliderCell"
     
     var sliderDidChange: ((Int) -> Void)?
     
@@ -30,9 +30,6 @@ final class SettingSpeedCell: UICollectionViewCell {
     }
     
     private func setupUI() {
-        
-        slider.minimumValue = 1
-        slider.maximumValue = 4
         valueLabel.text = "\(Int(slider.value))"
         
         addSubview(stack)
@@ -55,10 +52,13 @@ final class SettingSpeedCell: UICollectionViewCell {
         slider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
     }
     
-    func configure(with title: String, value: Int) {
+    func configure(title: String, minValue: Int, maxValue: Int, currentValue: Int) {
         titleLabel.text = title
-        valueLabel.text = "\(value)"
-        slider.value = Float(value)
+        valueLabel.text = "\(currentValue)"
+        
+        slider.minimumValue = Float(minValue)
+        slider.maximumValue = Float(maxValue)
+        slider.value = Float(currentValue)
     }
     
     @objc private func sliderValueChanged() {

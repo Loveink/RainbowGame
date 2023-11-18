@@ -1,5 +1,5 @@
 //
-//  SettingBackgroundCell.swift
+//  SettingsSwitchCell.swift
 //  RainbowGame
 //
 //  Created by Наталья Миронова on 14.11.2023.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class SettingBackgroundCell: UICollectionViewCell {
+final class SettingsSwitchCell: SettingsCollectionCellView {
     
-    static let id = "settingBackgroundCell"
+    static let id = "SettingsSwitchCell"
     
     var switchDidChange: ((Bool) -> Void)?
     
@@ -30,7 +30,7 @@ final class SettingBackgroundCell: UICollectionViewCell {
     
     private func setupUI() {
         
-        addSubview(stack)
+        contentView.addSubview(stack)
         
         [titleLabel, switchControl].forEach { stack.addArrangedSubview($0)}
         
@@ -39,14 +39,9 @@ final class SettingBackgroundCell: UICollectionViewCell {
         stack.distribution = .fill
         stack.alignment = .center
         
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            stack.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            stack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            stack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            stack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
-        ])
+        stack.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(8)
+        }
         
         switchControl.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
     }

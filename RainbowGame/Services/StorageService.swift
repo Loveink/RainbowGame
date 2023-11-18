@@ -8,7 +8,7 @@
 import UIKit
 
 enum GameColor: String, CaseIterable {
-    case red, blue, yellow, green, purple
+    case red, blue, yellow, green, purple, cian, brown, orange
     
     var name: String {
         switch self {
@@ -22,6 +22,12 @@ enum GameColor: String, CaseIterable {
             return "Зеленый"
         case .purple:
             return "Фиолетовый"
+        case .cian:
+            return "Голубой"
+        case .brown:
+            return "Коричневый"
+        case .orange:
+            return "Оранжевый"
         }
     }
     
@@ -37,17 +43,54 @@ enum GameColor: String, CaseIterable {
             return Colors.Cards.green
         case .purple:
             return Colors.Cards.purple
+        case .cian:
+            return Colors.Cards.cian
+        case .brown:
+            return Colors.Cards.brown
+        case .orange:
+            return Colors.Cards.orange
         }
     }
 }
 
-enum GameWordPosition: String {
+enum GameWordPosition: String, CaseIterable {
     case middle
     case random
+    
+    var string: String {
+        switch self {
+        case .middle:
+           return "По центру"
+        case .random:
+            return "Случайное"
+        }
+    }
 }
 
-enum GameBackgroundColor: String {
+enum GameBackgroundColor: String, CaseIterable {
     case gray, white, black
+    
+    var string: String {
+        switch self {
+        case .gray:
+            return "Серый"
+        case .white:
+            return "Белый"
+        case .black:
+            return "Черный"
+        }
+    }
+    
+    var color: UIColor {
+        switch self {
+        case .black:
+            return .black
+        case .gray:
+            return .gray
+        case .white:
+            return .white
+        }
+    }
 }
 
 protocol SettingsStorage: AnyObject {
@@ -158,7 +201,7 @@ final class StorageService: GameStorage {
         }
         
         set {
-            UserDefaults.standard.setValue(newValue, forKey: Keys.backgroundColor.rawValue)
+            UserDefaults.standard.setValue(newValue.rawValue, forKey: Keys.backgroundColor.rawValue)
         }
     }
     
@@ -168,7 +211,7 @@ final class StorageService: GameStorage {
         }
         
         set {
-            UserDefaults.standard.setValue(newValue, forKey: Keys.wordPosition.rawValue)
+            UserDefaults.standard.setValue(newValue.rawValue, forKey: Keys.wordPosition.rawValue)
         }
     }
     

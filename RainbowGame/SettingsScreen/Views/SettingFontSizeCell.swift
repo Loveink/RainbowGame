@@ -1,5 +1,5 @@
 //
-//  SettingColorBackgroundCell.swift
+//  SettingFontSizeCell.swift
 //  RainbowGame
 //
 //  Created by Наталья Миронова on 17.11.2023.
@@ -7,14 +7,15 @@
 
 import UIKit
 
-final class SettingColorBackgroundCell: UICollectionViewCell {
+final class SettingFontSizeCell: SettingsCollectionCellView {
 	
-	static let id = "settingColorBackgroundCell"
+	static let id = "settingFontSizeCell"
 	
-	//	var segmentedControlValueChanged: ((Int) -> Void)?
+	var stepperDidChange: ((Int) -> Void)?
 	
 	private let titleLabel = UILabel()
-	private let segmetedControl = UISegmentedControl(items: ["Серый", "Белый", "Черный"])
+	private let fontSizeStepper = UIStepper()
+	private let fontSizeLabel = UILabel()
 	
 	private let stack = UIStackView()
 	
@@ -30,15 +31,18 @@ final class SettingColorBackgroundCell: UICollectionViewCell {
 	
 	private func setupUI() {
 		
-		titleLabel.text = "Цвет фона"
+		fontSizeStepper.minimumValue = 15
+		fontSizeStepper.maximumValue = 20
+		fontSizeLabel.text = "aA"
 		
 		addSubview(stack)
 		
-		[titleLabel, segmetedControl].forEach { stack.addArrangedSubview($0)}
+		[titleLabel, fontSizeStepper, fontSizeLabel].forEach { stack.addArrangedSubview($0)}
 		
-		stack.axis = .vertical
+		stack.axis = .horizontal
 		stack.spacing = 16
 		stack.distribution = .fill
+		stack.alignment = .center
 		
 		stack.translatesAutoresizingMaskIntoConstraints = false
 		
@@ -49,18 +53,17 @@ final class SettingColorBackgroundCell: UICollectionViewCell {
 			stack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
 		])
 		
-		segmetedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
+		fontSizeStepper.addTarget(self, action: #selector(stepperValueChanged(_:)), for: .valueChanged)
 	}
 	
 	func configure(with title: String, value: Int) {
-		//		titleLabel.text = title
-		//		fontSizeLabel.font = UIFont.systemFont(ofSize: CGFloat(value))
-		//		fontSizeStepper.value = CGFloat(value)
+		titleLabel.text = title
+		fontSizeLabel.font = UIFont.systemFont(ofSize: CGFloat(value))
+		fontSizeStepper.value = CGFloat(value)
 	}
 	
-	@objc private func segmentedControlValueChanged(_ segmentControl: UISegmentedControl) {
-		//		fontSizeLabel.font = UIFont.systemFont(ofSize: CGFloat(stepper.value))
-		//		stepperDidChange?(Int(stepper.value))
+	@objc private func stepperValueChanged(_ stepper: UIStepper) {
+		fontSizeLabel.font = UIFont.systemFont(ofSize: CGFloat(stepper.value))
+		stepperDidChange?(Int(stepper.value))
 	}
 }
-
