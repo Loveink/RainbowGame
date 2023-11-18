@@ -40,7 +40,7 @@
 		CB43A2522B02BDBF0021904B /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43A2512B02BDBF0021904B /* ResultsViewController.swift */; };
 		CB43A2542B02BDE80021904B /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43A2532B02BDE80021904B /* ResultCell.swift */; };
 		CB43A2562B02BDFE0021904B /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43A2552B02BDFE0021904B /* GameResult.swift */; };
-		CB43A2582B02BE120021904B /* GameResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43A2572B02BE120021904B /* GameResults.swift */; };
+		CB5B5E9E2B07ED60001808C0 /* GameResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5B5E9D2B07ED60001808C0 /* GameResults.swift */; };
 		CBA404552B04B02600EEFD8D /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA404542B04B02600EEFD8D /* Shadow.swift */; };
 		CBA404572B04C96B00EEFD8D /* Colors Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA404562B04C96B00EEFD8D /* Colors Extension.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +81,7 @@
 		CB43A2532B02BDE80021904B /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		CB43A2552B02BDFE0021904B /* GameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
 		CB43A2572B02BE120021904B /* GameResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResults.swift; sourceTree = "<group>"; };
+		CB5B5E9D2B07ED60001808C0 /* GameResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResults.swift; sourceTree = "<group>"; };
 		CBA404542B04B02600EEFD8D /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		CBA404562B04C96B00EEFD8D /* Colors Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +155,7 @@
 			children = (
 				57BE155E2B011544001FA77E /* RainbowGame */,
 				57BE155D2B011544001FA77E /* Products */,
+				CB5B5E9C2B07ED01001808C0 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -310,6 +312,7 @@
 		CB43A24E2B02BD910021904B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CB5B5E9D2B07ED60001808C0 /* GameResults.swift */,
 				CB43A2552B02BDFE0021904B /* GameResult.swift */,
 			);
 			path = Models;
@@ -329,6 +332,14 @@
 				CB43A2512B02BDBF0021904B /* ResultsViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CB5B5E9C2B07ED01001808C0 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				CB43A2572B02BE120021904B /* GameResults.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

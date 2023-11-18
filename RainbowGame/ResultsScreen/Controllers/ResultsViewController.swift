@@ -9,10 +9,13 @@
     
     class ResultsViewController: RainbowViewController, UITableViewDataSource, UITableViewDelegate {
         // MARK: - Declaration
-        private let gameResults = GameResults()
+        
+        private let storage: ResultsStorage = StorageService()
+        private lazy var results = storage.results
         
         private let stackView: UIStackView = {
            let stackView = UIStackView()
+            stackView.alpha = 0
             stackView.axis = .vertical
             stackView.spacing = 10
             stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -47,11 +50,11 @@
         
         private let emptyTableLabel: UILabel = {
             let label = UILabel()
-            label.isHidden = true
             label.font = .boldSystemFont(ofSize: 25)
             label.textColor = .black
             label.textAlignment = .center
             label.numberOfLines = 2
+            label.alpha = 0.0
             label.text = """
                       Пока что здесь пусто
                       :)
@@ -68,33 +71,39 @@
             setupTableView()
             setupViews()
             setupConstraints()
-            loadResults()
+            updateUI()
+            
+    
             clearButton.addTarget(self, action: #selector(clearResults), for: .touchUpInside)
     
         }
         // MARK: - Setups
         
         private func setupViews() {
+            
+            
             view.addSubview(stackView)
+            view.addSubview(emptyTableLabel)
             stackView.addSubview(tableView)
         
             stackView.addSubview(clearButton)
-            view.addSubview(emptyTableLabel)
+            
             
         }
         
+        
+        
         private func setupConstraints() {
             NSLayoutConstraint.activate([
-                stackView.topAnchor.constraint(equalTo: view.topAnchor),
+                stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
                 stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
                 stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
                 stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
                 
-                tableView.topAnchor.constraint(equalTo: view.topAnchor),
+                tableView.topAnchor.constraint(equalTo: stackView.topAnchor),
                 tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
-                tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  -25),
+                tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
                 tableView.bottomAnchor.constraint(equalTo: clearButton.topAnchor, constant: -10),
-                
                 
                 clearButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
                 clearButton.heightAnchor.constraint(equalToConstant: 65),
@@ -106,12 +115,10 @@
                 
                 emptyTableLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 emptyTableLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-                ])
+            ])
         }
         
-        
         private func setupTableView() {
-            view.addSubview(tableView)
             tableView.dataSource = self
             tableView.delegate = self
             tableView.separatorStyle = .none
@@ -120,44 +127,34 @@
         
         
         // Удалить, когда реализуем механизм сохранения данных
-        private func loadResults() {
-            
-            gameResults.addResult(score: 5, totalWords: 5, time: 15.5, speed: 2)
-            gameResults.addResult(score: 3, totalWords: 10, time: 15.5, speed: 2)
-            gameResults.addResult(score: 7, totalWords: 7, time: 13.5, speed: 2)
-            gameResults.addResult(score: 2, totalWords: 10, time: 2, speed: 2)
-            
-            gameResults.addResult(score: 5, totalWords: 5, time: 15.5, speed: 2)
-            gameResults.addResult(score: 3, totalWords: 10, time: 15.5, speed: 2)
-            gameResults.addResult(score: 7, totalWords: 10, time: 13.5, speed: 2)
-            gameResults.addResult(score: 2, totalWords: 10, time: 2, speed: 2)
-            gameResults.addResult(score: 5, totalWords: 5, time: 15.5, speed: 2)
-            gameResults.addResult(score: 3, totalWords: 10, time: 15.5, speed: 2)
-            gameResults.addResult(score: 7, totalWords: 10, time: 13.5, speed: 2)
-            gameResults.addResult(score: 2, totalWords: 10, time: 2, speed: 2)
-            gameResults.addResult(score: 5, totalWords: 5, time: 15.5, speed: 2)
-            gameResults.addResult(score: 3, totalWords: 10, time: 15.5, speed: 2)
-            gameResults.addResult(score: 7, totalWords: 10, time: 13.5, speed: 2)
-            gameResults.addResult(score: 2, totalWords: 10, time: 2, speed: 2)
-        }
-        
        
-    
-        
-        
+
         @objc private func clearResults() {
-            gameResults.clearResults()
-            tableView.reloadData()
+            storage.clearResults()
+            results = storage.results
+            updateUI()
+            
         }
+        
+        private func updateUI() {
+            UIView.animate(withDuration: 0.2) {
+                self.stackView.alpha = self.results.isEmpty ? 0 : 1
+                self.emptyTableLabel.alpha = self.results.isEmpty ? 1 : 0
+            }
+        }
+      
+        
         // MARK: - TableView Data Surce
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return gameResults.getResults().count
+            return results.count
         }
+        
+       
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as! ResultCell
-            let result = gameResults.getResults()[indexPath.row]
+            let result = results[indexPath.row]
             cell.configure(with: result)
             cell.backgroundColor = UIColor().getLightBlueColor()
             return cell

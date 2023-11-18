@@ -105,8 +105,8 @@ final class GameScreenPresenter: GameScreenOutput {
                     score: roundPoints,
                     totalWords: roundTime / colorChangeTime,
                     speed: colorChangeTime,
-                    time: roundTime,
-                    orderNumber: storage.results.count + 1
+                    time: Float(roundTime)
+        
                 )
             )
             screen?.showResultsScreen()
