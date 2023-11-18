@@ -22,7 +22,7 @@ class ResultCell: UITableViewCell {
         let label = UILabel()
         label.textAlignment = .left
         label.font = .boldSystemFont(ofSize: 18)
-        label.textColor = .systemGray3
+        label.textColor = Colors.Interface.gray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -31,7 +31,7 @@ class ResultCell: UITableViewCell {
         let label = UILabel()
         label.textAlignment = .right
         label.font = .boldSystemFont(ofSize: 18)
-        label.textColor = .systemGray3
+        label.textColor = Colors.Interface.gray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -40,7 +40,7 @@ class ResultCell: UITableViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 30)
-        label.textColor = .systemGray3
+        label.textColor = Colors.Interface.gray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -49,7 +49,7 @@ class ResultCell: UITableViewCell {
         let label = UILabel()
         label.textAlignment = .right
         label.font = .boldSystemFont(ofSize: 18)
-        label.textColor = .systemGray3
+        label.textColor = Colors.Interface.gray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -89,32 +89,32 @@ class ResultCell: UITableViewCell {
     }
     
     func configure(with result: GameResult) {
-        
-        if result.score == result.totalColors {
-            containerView.backgroundColor = UIColor().getYellowColor()
-            scoreLabel.textColor = UIColor(red: 188/255, green: 151/255, blue: 0/255, alpha: 1)
-            timeLabel.textColor = UIColor(red: 188/255, green: 151/255, blue: 0/255, alpha: 1)
-            orderLabel.textColor = UIColor(red: 188/255, green: 151/255, blue: 0/255, alpha: 1)
-            speedLabel.textColor = UIColor(red: 188/255, green: 151/255, blue: 0/255, alpha: 1)
+
+        if result.score == 0 {
+            scoreLabel.isHidden = true
+        } else if result.score == result.totalColors && result.totalColors != 0 {
+            containerView.backgroundColor = Colors.Interface.yellow
+            scoreLabel.textColor = Colors.Interface.darkYellow
+            timeLabel.textColor = Colors.Interface.darkYellow
+            orderLabel.textColor = Colors.Interface.darkYellow
+            speedLabel.textColor = Colors.Interface.darkYellow
         }
         
-        speedLabel.text = "Скорость: \(result.speed)x"
-        scoreLabel.text = "\(result.score)/\(result.totalColors)"
-        timeLabel.text = String(result.time)
-        orderLabel.text = "Игра №\(result.orderNumber)"
-        
-        
+            speedLabel.text = "Скорость: \(result.speed)x"
+            scoreLabel.text = "\(result.score)/\(result.totalColors)"
+            timeLabel.text = String(result.time)
+            orderLabel.text = "Игра №\(result.orderNumber)"
     }
     
     override func prepareForReuse() {
             super.prepareForReuse()
 
-            // Сбрасываем все настройки, которые могли быть изменены при конфигурации ячейки
             containerView.backgroundColor = .white
-            scoreLabel.textColor = .systemGray3
-            timeLabel.textColor = .systemGray3
-            orderLabel.textColor = .systemGray3
-            speedLabel.textColor = .systemGray3
+        scoreLabel.isHidden = false
+            scoreLabel.textColor = Colors.Interface.gray
+            timeLabel.textColor = Colors.Interface.gray
+            orderLabel.textColor = Colors.Interface.gray
+            speedLabel.textColor = Colors.Interface.gray
         }
     
     required init?(coder: NSCoder) {

@@ -13,6 +13,7 @@ final class ColorView: UIView {
     struct Model {
         let text: String
         let textColor: UIColor
+        let fontSize: CGFloat
         let frameColor: UIColor?
         let didSelectHandler: (() -> Void)?
     }
@@ -36,7 +37,7 @@ final class ColorView: UIView {
     
     private let markCircle: UIView = {
         let view = UIView()
-        view.backgroundColor = Colors.gray
+//        view.backgroundColor = Colors.U
         view.layer.cornerRadius = Layout.markCirleSize.width / 2
         return view
     }()
@@ -70,7 +71,7 @@ final class ColorView: UIView {
         addSubview(markCircle)
         addSubview(markView)
         
-        titleLabel.font = Fonts.Cards.font
+        titleLabel.font = Fonts.font
         
         coloredView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -80,7 +81,7 @@ final class ColorView: UIView {
             $0.top.equalToSuperview().inset(Layout.titleInsets.top)
             $0.bottom.equalToSuperview().inset(Layout.titleInsets.bottom)
             $0.leading.greaterThanOrEqualToSuperview().inset(Layout.titleInsets.left)
-            $0.trailing.lessThanOrEqualTo(markCircle.snp.leading).inset(Layout.titleInsets.right)
+            $0.trailing.lessThanOrEqualTo(markCircle.snp.leading).inset(-Layout.titleInsets.right)
             $0.centerX.equalToSuperview().priority(.medium)
         }
         
@@ -109,6 +110,7 @@ final class ColorView: UIView {
     func update(_ model: Model) {
         titleLabel.text = model.text
         titleLabel.textColor = model.textColor
+        titleLabel.font = titleLabel.font.withSize(model.fontSize)
         selectHandler = model.didSelectHandler
         markCircle.isHidden = model.didSelectHandler == nil
         markView.isHidden = true

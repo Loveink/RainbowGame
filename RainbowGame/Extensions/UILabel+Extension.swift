@@ -17,6 +17,7 @@ extension UILabel {
     label.textAlignment = textAlignment
     label.numberOfLines = numberOfLines
     label.adjustsFontSizeToFitWidth = true
+      label.minimumScaleFactor = 16
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }

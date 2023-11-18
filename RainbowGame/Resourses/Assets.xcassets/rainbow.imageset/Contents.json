@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "rainbow.png",
+      "filename" : "rainbow 1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -11,7 +11,7 @@
       "scale" : "2x"
     },
     {
-      "filename" : "rainbow@3x.png",
+      "filename" : "rainbow.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

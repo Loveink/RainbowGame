@@ -8,7 +8,11 @@
 import UIKit
 
 enum Fonts {
-    enum Cards {
-        static let font = UIFont.systemFont(ofSize: 20)
-    }
+    
+    
+    static let text = UIFont.boldSystemFont(ofSize: 18)
+    static let title = UIFont.boldSystemFont(ofSize: 30)
+    static let font = UIFont.systemFont(ofSize: 20)
 }
+
+

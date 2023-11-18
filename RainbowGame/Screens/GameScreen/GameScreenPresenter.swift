@@ -14,10 +14,10 @@ final class GameScreenPresenter: GameScreenOutput {
     private let storage: GameStorage
     private lazy var colors: [GameColor] = storage.colors
     private lazy var roundTime: Int = storage.gameTime
-    private lazy var colorChangeTime = 10 / storage.cardChangeSpeed
+    private lazy var colorChangeTime = storage.cardChangeSpeed
     private lazy var gameSpeed = storage.cardChangeSpeed {
         didSet {
-            if gameSpeed > 5 {
+            if gameSpeed > 4 {
                 gameSpeed = 1
             }
         }
@@ -52,8 +52,8 @@ final class GameScreenPresenter: GameScreenOutput {
     
     func play() {
         if gameSpeed != storage.cardChangeSpeed {
-            colorChangeTime = 10 / gameSpeed
-            if interColorTime <= colorChangeTime * 2 {
+            colorChangeTime = gameSpeed
+            if interColorTime > colorChangeTime {
                 interColorTime = 0
             }
             storage.cardChangeSpeed = gameSpeed
@@ -105,8 +105,8 @@ final class GameScreenPresenter: GameScreenOutput {
                     score: roundPoints,
                     totalWords: roundTime / colorChangeTime,
                     speed: colorChangeTime,
-                    time: roundTime,
-                    orderNumber: storage.results.count + 1
+                    time: Float(roundTime)
+        
                 )
             )
             screen?.showResultsScreen()
@@ -126,9 +126,11 @@ final class GameScreenPresenter: GameScreenOutput {
         let randomColor = self.randomColor
         view?.updateWith(
             .init(
+                backgroundColor: storage.theme.color,
                 color: .init(
                     text: randomColor.fakeColor.name,
                     textColor: storage.coloredFrame ? .white : randomColor.color,
+                    fontSize: CGFloat(storage.fontSize),
                     frame: storage.coloredFrame ? .init(color: randomColor.color) : nil,
                     didSelectHandler: storage.withChecks ? {
                         [weak self] in
@@ -137,7 +139,7 @@ final class GameScreenPresenter: GameScreenOutput {
                     } : nil
                 ),
                 wordPosition: storage.wordPosition,
-                speed: "x\(gameSpeed)",
+                speed: "\(gameSpeed)x",
                 speedClosure: {
                     [weak self] in
                     
@@ -146,7 +148,7 @@ final class GameScreenPresenter: GameScreenOutput {
                     self.pause()
                     self.view?.updateGameState(.paused)
                     self.gameSpeed += 1
-                    self.view?.updateSpeed("x\(self.gameSpeed)")
+                    self.view?.updateSpeed("\(self.gameSpeed)x")
                 }
             )
         )

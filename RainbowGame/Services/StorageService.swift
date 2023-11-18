@@ -8,7 +8,7 @@
 import UIKit
 
 enum GameColor: String, CaseIterable {
-    case red, blue, yellow, green, purple
+    case red, blue, yellow, green, purple, cian, brown, orange
     
     var name: String {
         switch self {
@@ -22,6 +22,12 @@ enum GameColor: String, CaseIterable {
             return "Зеленый"
         case .purple:
             return "Фиолетовый"
+        case .cian:
+            return "Голубой"
+        case .brown:
+            return "Коричневый"
+        case .orange:
+            return "Оранжевый"
         }
     }
     
@@ -37,17 +43,55 @@ enum GameColor: String, CaseIterable {
             return Colors.Cards.green
         case .purple:
             return Colors.Cards.purple
+        case .cian:
+            return Colors.Cards.cian
+        case .brown:
+            return Colors.Cards.brown
+        case .orange:
+            return Colors.Cards.orange
         }
     }
 }
 
-enum GameWordPosition: String {
+enum GameWordPosition: String, CaseIterable {
     case middle
     case random
+    
+    var string: String {
+        switch self {
+        case .middle:
+           return "По центру"
+        case .random:
+            return "Случайное"
+        }
+    }
 }
 
-enum GameBackgroundColor: String {
-    case gray, white, black
+enum GameTheme: String, CaseIterable {
+    case standart, white, black
+    
+    var string: String {
+        switch self {
+        case .standart:
+            return "Стандартный"
+        case .white:
+            return "Белый"
+        case .black:
+            return "Черный"
+        }
+    }
+    
+    var color: UIColor {
+        switch self {
+        case .black:
+            return .black
+        case .standart:
+
+            return Colors.Interface.background
+        case .white:
+            return .white
+        }
+    }
 }
 
 protocol SettingsStorage: AnyObject {
@@ -57,7 +101,7 @@ protocol SettingsStorage: AnyObject {
     var colors: [GameColor] { get set }
     var fontSize: Int { get set }
     var coloredFrame: Bool { get set }
-    var backgroundColor: GameBackgroundColor { get set }
+    var theme: GameTheme { get set }
     var wordPosition: GameWordPosition { get set }
 }
 
@@ -152,13 +196,13 @@ final class StorageService: GameStorage {
         }
     }
     
-    var backgroundColor: GameBackgroundColor {
+    var theme: GameTheme {
         get {
-            GameBackgroundColor(rawValue: UserDefaults.standard.string(forKey: Keys.backgroundColor.rawValue)!)!
+            GameTheme(rawValue: UserDefaults.standard.string(forKey: Keys.backgroundColor.rawValue)!)!
         }
         
         set {
-            UserDefaults.standard.setValue(newValue, forKey: Keys.backgroundColor.rawValue)
+            UserDefaults.standard.setValue(newValue.rawValue, forKey: Keys.backgroundColor.rawValue)
         }
     }
     
@@ -168,7 +212,7 @@ final class StorageService: GameStorage {
         }
         
         set {
-            UserDefaults.standard.setValue(newValue, forKey: Keys.wordPosition.rawValue)
+            UserDefaults.standard.setValue(newValue.rawValue, forKey: Keys.wordPosition.rawValue)
         }
     }
     
@@ -181,7 +225,7 @@ final class StorageService: GameStorage {
                 Keys.colors.rawValue: [GameColor.red, GameColor.blue, GameColor.green, GameColor.purple, GameColor.yellow].map { $0.rawValue },
                 Keys.fontSize.rawValue: 20,
                 Keys.coloredFrame.rawValue: true,
-                Keys.backgroundColor.rawValue: GameBackgroundColor.gray.rawValue,
+                Keys.backgroundColor.rawValue: GameTheme.standart.rawValue,
                 Keys.wordPosition.rawValue: GameWordPosition.random.rawValue
             ]
         )

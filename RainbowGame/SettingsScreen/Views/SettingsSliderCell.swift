@@ -1,5 +1,5 @@
 //
-//  SettingTimeCell.swift
+//  SettingsSliderCell.swift
 //  RainbowGame
 //
 //  Created by Наталья Миронова on 14.11.2023.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class SettingTimeCell: UICollectionViewCell {
+final class SettingsSliderCell: SettingsCollectionCellView {
     
-    static let id = "settingTimeCell"
+    static let id = "SettingsSliderCell"
     
     var sliderDidChange: ((Int) -> Void)?
     
@@ -22,7 +22,14 @@ final class SettingTimeCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
-        backgroundColor = .lightGray
+        slider.tintColor = Colors.Interface.blueText
+        
+        titleLabel.font = Fonts.text
+        valueLabel.font = Fonts.text
+        titleLabel.textColor = Colors.Interface.grayText
+        valueLabel.textColor = Colors.Interface.grayText
+        backgroundColor = .white
+        layer.cornerRadius = 25
     }
     
     required init?(coder: NSCoder) {
@@ -30,14 +37,11 @@ final class SettingTimeCell: UICollectionViewCell {
     }
     
     private func setupUI() {
-        
-        slider.minimumValue = 1
-        slider.maximumValue = 20
         valueLabel.text = "\(Int(slider.value))"
         
         addSubview(stack)
         
-        [titleLabel, slider, valueLabel].forEach { stack.addArrangedSubview($0)}
+        [titleLabel, slider, valueLabel].forEach { stack.addArrangedSubview($0) }
         
         stack.axis = .horizontal
         stack.spacing = 16
@@ -46,7 +50,6 @@ final class SettingTimeCell: UICollectionViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            
             stack.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             stack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             stack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
@@ -56,10 +59,13 @@ final class SettingTimeCell: UICollectionViewCell {
         slider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
     }
     
-    func configure(with title: String, value: Int) {
+    func configure(title: String, minValue: Int, maxValue: Int, currentValue: Int) {
         titleLabel.text = title
-        valueLabel.text = "\(value)"
-        slider.value = Float(value)
+        valueLabel.text = "\(currentValue)"
+        
+        slider.minimumValue = Float(minValue)
+        slider.maximumValue = Float(maxValue)
+        slider.value = Float(currentValue)
     }
     
     @objc private func sliderValueChanged() {

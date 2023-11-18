@@ -49,14 +49,14 @@ class CustomButton: UIButton {
 	private func setupButton() {
 		self.backgroundColor = customBackgroundColor
 		self.setTitle(customTitle, for: .normal)
-		self.titleLabel?.font = .systemFont(ofSize: 20.0, weight: .medium)
+		self.titleLabel?.font = .boldSystemFont(ofSize: 25)
         self.setTitleColor(customTitleColor, for: .normal)
 		self.layer.shadowColor = customShadowColor
 		self.layer.shadowOffset = CGSize(width: 0.0, height: 2.5)
 		self.layer.shadowOpacity = 0.7
 		self.layer.shadowRadius = 3.5
 		self.layer.masksToBounds = false
-		self.layer.cornerRadius = 10
+		self.layer.cornerRadius = 25
 		self.translatesAutoresizingMaskIntoConstraints = false
 	}	
 }
