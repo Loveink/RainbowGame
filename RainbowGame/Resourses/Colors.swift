@@ -9,7 +9,7 @@ import UIKit
 
 enum Colors {
     enum Background {
-        static let lvl1 = UIColor(named: "backgroundLvl1")!
+        static let lvl1 = UIColor(named: "background")
     }
 
     enum Cards {
@@ -23,6 +23,24 @@ enum Colors {
         static let brown = UIColor(named: "brownCard")!
     }
     
-    static let black = UIColor(named: "BlackPrimary")!
-    static let gray = UIColor(named: "GrayPrimary")!
+    enum Interface {
+        static let background = UIColor(named: "background")!
+        static let blueText = UIColor(named: "blueText")!
+        static let grayText = UIColor(named: "grayText")!
+        
+        static let red = UIColor(named: "redAccent")!
+        static let darkRed = UIColor(named: "darkRedAccent")!
+        static let orange = UIColor(named: "orangeAccent")!
+        static let blue = UIColor(named: "blueAccent")!
+        
+        static let yellow = UIColor(named: "yellowAccent")!
+        static let darkYellow = UIColor(named: "darkYellowAccent")!
+        static let purple = UIColor(named: "purpleAccent")!
+        static let green = UIColor(named: "greenAccent")!
+        static let darkGreen = UIColor(named: "darkGreenAccent")!
+        static let black = UIColor(named: "BlackPrimary")!
+        static let gray = UIColor(named: "grayText")!
+    }
 }
+
+

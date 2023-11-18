@@ -16,7 +16,7 @@ final class SettingsViewController: RainbowViewController, UICollectionViewDataS
         case fontSize
         case withChecks
         case wordPosition
-        case backgroundColor
+        case theme
         case wordColor
         
         var title: String {
@@ -33,7 +33,7 @@ final class SettingsViewController: RainbowViewController, UICollectionViewDataS
                 return "Проверка заданий"
             case .wordPosition:
                 return "Расположение слова на экране"
-            case .backgroundColor:
+            case .theme:
                 return "Цвет фона"
             case .wordColor:
                 return "Цвет букв"
@@ -60,6 +60,7 @@ final class SettingsViewController: RainbowViewController, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        collectionView.backgroundColor = Colors.Interface.background
         guard let setting = Settings(rawValue: indexPath.item) else {
             return UICollectionViewCell()
         }
@@ -124,13 +125,13 @@ final class SettingsViewController: RainbowViewController, UICollectionViewDataS
             }
             return cell
             
-        case .backgroundColor:
+        case .theme:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SettingsSegmentCell.id, for: indexPath) as! SettingsSegmentCell
-            cell.configure(title: setting.title, segments: GameBackgroundColor.allCases.map { $0.string }, selectedSegment: GameBackgroundColor.allCases.firstIndex(of: storage.backgroundColor) ?? 0)
+            cell.configure(title: setting.title, segments: GameTheme.allCases.map { $0.string }, selectedSegment: GameTheme.allCases.firstIndex(of: storage.theme) ?? 0)
             cell.segmentedControlValueChanged = {
                 [weak self] value in
                 
-                self?.storage.backgroundColor = GameBackgroundColor.allCases[value]
+                self?.storage.theme = GameTheme.allCases[value]
             }
             return cell
             
@@ -147,7 +148,7 @@ final class SettingsViewController: RainbowViewController, UICollectionViewDataS
     }
     
     private func configure() {
-        view.backgroundColor = Colors.Background.lvl1
+        view.backgroundColor = Colors.Interface.background
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -157,8 +158,8 @@ final class SettingsViewController: RainbowViewController, UICollectionViewDataS
         collectionView.register(SettingsSegmentCell.self, forCellWithReuseIdentifier: SettingsSegmentCell.id)
         collectionView.register(SettingsSliderCell.self, forCellWithReuseIdentifier: SettingsSliderCell.id)
         collectionView.register(SettingsSwitchCell.self, forCellWithReuseIdentifier: SettingsSwitchCell.id)
-		collectionView.register(SettingFontSizeCell.self, forCellWithReuseIdentifier: SettingFontSizeCell.id)
-		collectionView.register(SettingColorLettersCell.self, forCellWithReuseIdentifier: SettingColorLettersCell.id)
+        collectionView.register(SettingFontSizeCell.self, forCellWithReuseIdentifier: SettingFontSizeCell.id)
+        collectionView.register(SettingColorLettersCell.self, forCellWithReuseIdentifier: SettingColorLettersCell.id)
     }
     
     private func configureLayout() -> UICollectionViewLayout {

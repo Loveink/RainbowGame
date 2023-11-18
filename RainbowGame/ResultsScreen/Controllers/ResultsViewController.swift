@@ -8,14 +8,23 @@
 import UIKit
 
 class ResultsViewController: RainbowViewController, UITableViewDataSource, UITableViewDelegate {
-    
     // MARK: - Declaration
+    
     private let storage: ResultsStorage = StorageService()
     private lazy var results = storage.results
     
+    private let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.alpha = 0
+        stackView.axis = .vertical
+        stackView.spacing = 10
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
     private let tableView: UITableView = {
         let table = UITableView()
-        table.backgroundColor = .white
+        table.backgroundColor = Colors.Interface.background
         table.separatorStyle = .none
         table.allowsSelection = false
         table.allowsSelectionDuringEditing = false
@@ -27,35 +36,24 @@ class ResultsViewController: RainbowViewController, UITableViewDataSource, UITab
     private let clearButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Очистить Результаты", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .red
+        button.setTitleColor(Colors.Interface.darkRed, for: .normal)
+        button.backgroundColor = Colors.Interface.red
+        button.titleLabel?.minimumScaleFactor = 0.5
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.layer.cornerRadius = 25
         button.titleLabel?.font = .boldSystemFont(ofSize: 25)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOpacity = 0.3
-        button.layer.shadowOffset = CGSizeZero
-        button.layer.shadowRadius = 3
+        
         return button
-    }()
-    
-    private let bestResultLabel: UILabel = {
-        let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 20)
-        label.textColor = .black
-        label.textAlignment = .left
-        label.text = "Лучший результат: типа время)"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
     }()
     
     private let emptyTableLabel: UILabel = {
         let label = UILabel()
-        label.isHidden = true
         label.font = .boldSystemFont(ofSize: 25)
-        label.textColor = .black
+        label.textColor = Colors.Interface.blueText
         label.textAlignment = .center
         label.numberOfLines = 2
+        label.alpha = 0.0
         label.text = """
                       Пока что здесь пусто
                       :)
@@ -65,80 +63,95 @@ class ResultsViewController: RainbowViewController, UITableViewDataSource, UITab
     }()
     
     override func viewDidLoad() {
+        self.title = "Статистика"
         super.viewDidLoad()
-        view.backgroundColor = .white
-        title = "Статистика"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: Images.arrowLeft, style: .plain, target: self, action: #selector(didTapBackButton))
+        
+        view.backgroundColor = Colors.Interface.background
+        orderNumerate()
         setupTableView()
-        setupStackView()
+        setupViews()
+        setupConstraints()
         updateUI()
-    }
-    
-    
-    
-    
-    
-    // MARK: - Setups
-    private func setupStackView() {
-        let stackView = UIStackView(arrangedSubviews: [tableView, bestResultLabel, clearButton, emptyTableLabel])
-        stackView.axis = .vertical
-        stackView.spacing = 10
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        
-        view.addSubview(stackView)
-        clearButton.heightAnchor.constraint(equalToConstant: 65).isActive = true
-        clearButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
-        clearButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
         clearButton.addTarget(self, action: #selector(clearResults), for: .touchUpInside)
         
+    }
+    // MARK: - Setups
+    
+    private func setupViews() {
+        
+        view.addSubview(emptyTableLabel)
+        view.addSubview(stackView)
+        
+        stackView.addSubview(tableView)
+        
+        stackView.addSubview(clearButton)
+        
+        navigationItem.leftBarButtonItem?.action = #selector(didTapBackButton)
+    }
+    
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            tableView.topAnchor.constraint(equalTo: stackView.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            tableView.bottomAnchor.constraint(equalTo: clearButton.topAnchor, constant: -10),
+            
+            clearButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            clearButton.heightAnchor.constraint(equalToConstant: 65),
+            clearButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
+            clearButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
+            
+            clearButton.titleLabel!.leadingAnchor.constraint(equalTo: clearButton.leadingAnchor, constant: 10),
+            clearButton.titleLabel!.trailingAnchor.constraint(equalTo: clearButton.trailingAnchor, constant: -10),
+            
+            emptyTableLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            emptyTableLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     
-  
-    
     private func setupTableView() {
-        view.addSubview(tableView)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.register(ResultCell.self, forCellReuseIdentifier: "resultCell")
-        
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+    }
+
+    // Удалить, когда реализуем механизм сохранения данных
+    @objc private func clearResults() {
+        storage.clearResults()
+        results = storage.results
+        updateUI()
     }
     
     private func updateUI() {
-        let hasResults              = !results.isEmpty
-        tableView.isHidden          = !hasResults
-        bestResultLabel.isHidden    = !hasResults
-        clearButton.isHidden        = !hasResults
-        emptyTableLabel.isHidden    = hasResults
-        
-        if hasResults {
-            tableView.reloadData()
+        UIView.animate(withDuration: 0.2) {
+            self.stackView.alpha = self.results.isEmpty ? 0 : 1
+            self.emptyTableLabel.alpha = self.results.isEmpty ? 1 : 0
         }
     }
     
-    @objc private func clearResults() {
-        storage.clearResults()
-        results = []
-        updateUI()
+    private func orderNumerate() {
+        if !results.isEmpty {
+            var number = results.count
+            for index in 0...results.count-1 {
+                results[index].orderNumber = number
+                number -= 1
+            }
+        }
     }
     
     @objc
     private func didTapBackButton() {
         navigationController?.popToRootViewController(animated: true)
     }
+    
+    
     // MARK: - TableView Data Surce
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -146,12 +159,10 @@ class ResultsViewController: RainbowViewController, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell    = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as! ResultCell
-        let result  = results[indexPath.row]
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as! ResultCell
+        let result = results[indexPath.row]
         cell.configure(with: result)
-        cell.backgroundColor = .white
-    
+        cell.backgroundColor = Colors.Interface.background
         return cell
     }
 }

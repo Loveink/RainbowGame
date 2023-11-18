@@ -67,13 +67,13 @@ enum GameWordPosition: String, CaseIterable {
     }
 }
 
-enum GameBackgroundColor: String, CaseIterable {
-    case gray, white, black
+enum GameTheme: String, CaseIterable {
+    case standart, white, black
     
     var string: String {
         switch self {
-        case .gray:
-            return "Серый"
+        case .standart:
+            return "Стандартный"
         case .white:
             return "Белый"
         case .black:
@@ -85,8 +85,9 @@ enum GameBackgroundColor: String, CaseIterable {
         switch self {
         case .black:
             return .black
-        case .gray:
-            return .gray
+        case .standart:
+
+            return Colors.Interface.background
         case .white:
             return .white
         }
@@ -100,7 +101,7 @@ protocol SettingsStorage: AnyObject {
     var colors: [GameColor] { get set }
     var fontSize: Int { get set }
     var coloredFrame: Bool { get set }
-    var backgroundColor: GameBackgroundColor { get set }
+    var theme: GameTheme { get set }
     var wordPosition: GameWordPosition { get set }
 }
 
@@ -195,9 +196,9 @@ final class StorageService: GameStorage {
         }
     }
     
-    var backgroundColor: GameBackgroundColor {
+    var theme: GameTheme {
         get {
-            GameBackgroundColor(rawValue: UserDefaults.standard.string(forKey: Keys.backgroundColor.rawValue)!)!
+            GameTheme(rawValue: UserDefaults.standard.string(forKey: Keys.backgroundColor.rawValue)!)!
         }
         
         set {
@@ -224,7 +225,7 @@ final class StorageService: GameStorage {
                 Keys.colors.rawValue: [GameColor.red, GameColor.blue, GameColor.green, GameColor.purple, GameColor.yellow].map { $0.rawValue },
                 Keys.fontSize.rawValue: 20,
                 Keys.coloredFrame.rawValue: true,
-                Keys.backgroundColor.rawValue: GameBackgroundColor.gray.rawValue,
+                Keys.backgroundColor.rawValue: GameTheme.standart.rawValue,
                 Keys.wordPosition.rawValue: GameWordPosition.random.rawValue
             ]
         )

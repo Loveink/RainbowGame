@@ -19,11 +19,16 @@ final class SettingFontSizeCell: SettingsCollectionCellView {
 	
 	private let stack = UIStackView()
 	
-	override init(frame: CGRect) {
-		super.init(frame: frame)
-		setupUI()
-		backgroundColor = .lightGray
-	}
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+        titleLabel.font = Fonts.text
+        fontSizeLabel.font = Fonts.text
+        titleLabel.textColor = Colors.Interface.grayText
+        fontSizeLabel.textColor = Colors.Interface.grayText
+        backgroundColor = .white
+        layer.cornerRadius = 25
+        }
 	
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
@@ -31,6 +36,7 @@ final class SettingFontSizeCell: SettingsCollectionCellView {
 	
 	private func setupUI() {
 		
+        
 		fontSizeStepper.minimumValue = 15
 		fontSizeStepper.maximumValue = 20
 		fontSizeLabel.text = "aA"

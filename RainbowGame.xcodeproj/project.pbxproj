@@ -17,7 +17,6 @@
 		57BE15782B011626001FA77E /* GameScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE15772B011626001FA77E /* GameScreenViewController.swift */; };
 		57BE157D2B01166A001FA77E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE157C2B01166A001FA77E /* SettingsViewController.swift */; };
 		57BE15812B01168B001FA77E /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE15802B01168B001FA77E /* RulesViewController.swift */; };
-		57C093B82B063CA30024E552 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C093B72B063CA30024E552 /* UILabel+Extension.swift */; };
 		57C8F23B2B03F1D60001DD19 /* SettingsSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C8F2382B03F1D60001DD19 /* SettingsSwitchCell.swift */; };
 		57C8F23C2B03F1D60001DD19 /* SettingsSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C8F2392B03F1D60001DD19 /* SettingsSliderCell.swift */; };
 		5E4EE3D12B079DB60098E4B4 /* SettingFontSizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4EE3D02B079DB60098E4B4 /* SettingFontSizeCell.swift */; };
@@ -40,6 +39,7 @@
 		CB43A2522B02BDBF0021904B /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43A2512B02BDBF0021904B /* ResultsViewController.swift */; };
 		CB43A2542B02BDE80021904B /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43A2532B02BDE80021904B /* ResultCell.swift */; };
 		CB43A2562B02BDFE0021904B /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43A2552B02BDFE0021904B /* GameResult.swift */; };
+		CB6921BD2B08BA710007691D /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6921BC2B08BA710007691D /* UILabel+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +77,9 @@
 		CB43A2512B02BDBF0021904B /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		CB43A2532B02BDE80021904B /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		CB43A2552B02BDFE0021904B /* GameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
+		CB43A2572B02BE120021904B /* GameResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResults.swift; sourceTree = "<group>"; };
+		CB5B5E9D2B07ED60001808C0 /* GameResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResults.swift; sourceTree = "<group>"; };
+		CB6921BC2B08BA710007691D /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,7 @@
 			children = (
 				57BE155E2B011544001FA77E /* RainbowGame */,
 				57BE155D2B011544001FA77E /* Products */,
+				CB5B5E9C2B07ED01001808C0 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -251,6 +255,14 @@
 			path = SettingsScreen;
 			sourceTree = "<group>";
 		};
+		57C093B92B07E9250024E552 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				CB43A2572B02BE120021904B /* GameResults.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		770AD2622B026AE000150DCF /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,9 +297,9 @@
 		774CD7912B017DDC007284AE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CB6921BC2B08BA710007691D /* UILabel+Extension.swift */,
 				24A047E92B03ED5800516074 /* CustomButton.swift */,
 				774CD78F2B017DC4007284AE /* UIApplication+Extension.swift */,
-				57C093B72B063CA30024E552 /* UILabel+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -303,6 +315,7 @@
 		CB43A24E2B02BD910021904B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CB5B5E9D2B07ED60001808C0 /* GameResults.swift */,
 				CB43A2552B02BDFE0021904B /* GameResult.swift */,
 			);
 			path = Models;
@@ -319,9 +332,19 @@
 		CB43A2502B02BDA30021904B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				57C093BA2B07E9920024E552 /* GameResults.swift */,
 				CB43A2512B02BDBF0021904B /* ResultsViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CB5B5E9C2B07ED01001808C0 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				CB43A2572B02BE120021904B /* GameResults.swift */,
+				57C093B72B063CA30024E552 /* UILabel+Extension.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,6 +431,7 @@
 				7728D79C2B081ADD007EDBEB /* SettingsSegmentCell.swift in Sources */,
 				774CD78E2B017C5E007284AE /* Fonts.swift in Sources */,
 				774CD7842B016F2F007284AE /* Colors.swift in Sources */,
+				CBA404572B04C96B00EEFD8D /* Colors Extension.swift in Sources */,
 				57BE15782B011626001FA77E /* GameScreenViewController.swift in Sources */,
 				774CD77C2B016CB0007284AE /* GameScreenPresenter.swift in Sources */,
 				774CD7902B017DC4007284AE /* UIApplication+Extension.swift in Sources */,
@@ -418,11 +442,12 @@
 				774CD77E2B016CB5007284AE /* GameScreen.swift in Sources */,
 				24A047EA2B03ED5800516074 /* CustomButton.swift in Sources */,
 				CB43A2542B02BDE80021904B /* ResultCell.swift in Sources */,
+				CBA404552B04B02600EEFD8D /* Shadow.swift in Sources */,
 				5E4EE3D92B07B6280098E4B4 /* CustomButtonCell.swift in Sources */,
 				CB43A2522B02BDBF0021904B /* ResultsViewController.swift in Sources */,
 				7728D79E2B082B5C007EDBEB /* SettingsCollectionView.swift in Sources */,
-				57C093B82B063CA30024E552 /* UILabel+Extension.swift in Sources */,
 				57BE15602B011544001FA77E /* AppDelegate.swift in Sources */,
+				CB6921BD2B08BA710007691D /* UILabel+Extension.swift in Sources */,
 				57C8F23B2B03F1D60001DD19 /* SettingsSwitchCell.swift in Sources */,
 				57BE157D2B01166A001FA77E /* SettingsViewController.swift in Sources */,
 				774CD7802B016D1F007284AE /* GameScreenProtocols.swift in Sources */,

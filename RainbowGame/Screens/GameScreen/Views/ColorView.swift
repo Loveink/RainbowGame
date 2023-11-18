@@ -37,7 +37,7 @@ final class ColorView: UIView {
     
     private let markCircle: UIView = {
         let view = UIView()
-        view.backgroundColor = Colors.gray
+//        view.backgroundColor = Colors.U
         view.layer.cornerRadius = Layout.markCirleSize.width / 2
         return view
     }()
@@ -71,7 +71,7 @@ final class ColorView: UIView {
         addSubview(markCircle)
         addSubview(markView)
         
-        titleLabel.font = Fonts.Cards.font
+        titleLabel.font = Fonts.font
         
         coloredView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
