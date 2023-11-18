@@ -139,6 +139,8 @@ final class GameScreenViewController: RainbowViewController, GameScreenInput {
     }
     
     private func configure() {
+        view.backgroundColor = Colors.background
+        
         view.addSubview(speedButton)
         speedButton.snp.makeConstraints {
             $0.size.equalTo(Layout.speedViewSize)

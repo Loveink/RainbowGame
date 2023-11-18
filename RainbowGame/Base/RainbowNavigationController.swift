@@ -27,6 +27,7 @@ final class RainbowNavigationController: UINavigationController {
         navigationBar.scrollEdgeAppearance = appearance
         navigationBar.compactScrollEdgeAppearance = appearance
         
-        navigationBar.tintColor = Colors.black
+        navigationBar.tintColor = Colors.mainText
+    
     }
 }

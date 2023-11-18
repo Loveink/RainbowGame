@@ -47,7 +47,7 @@ class  RulesViewController: RainbowViewController {
     //MARK: - UI setting
     func setUpUI() {
         
-        view.backgroundColor = .white
+        view.backgroundColor = Colors.background
         
         // setting rules view
         rulesView.backgroundColor = UIColor(red: 236/255, green: 231/255, blue: 237/255, alpha: 1)

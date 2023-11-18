@@ -51,7 +51,7 @@
         private let emptyTableLabel: UILabel = {
             let label = UILabel()
             label.font = .boldSystemFont(ofSize: 25)
-            label.textColor = .black
+            label.textColor = Colors.mainText
             label.textAlignment = .center
             label.numberOfLines = 2
             label.alpha = 0.0
@@ -59,7 +59,6 @@
                       Пока что здесь пусто
                       :)
                       """
-            label.dropShadow()
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }()
@@ -67,7 +66,8 @@
         override func viewDidLoad() {
             self.title = "Статистика"
             super.viewDidLoad()
-            view.backgroundColor = UIColor().getLightBlueColor()
+            view.backgroundColor = Colors.background
+            orderNumerate()
             setupTableView()
             setupViews()
             setupConstraints()
@@ -140,6 +140,16 @@
             UIView.animate(withDuration: 0.2) {
                 self.stackView.alpha = self.results.isEmpty ? 0 : 1
                 self.emptyTableLabel.alpha = self.results.isEmpty ? 1 : 0
+            }
+        }
+        
+        private func orderNumerate() {
+            if !results.isEmpty {
+                var number = results.count
+                for index in 0...results.count-1 {
+                    results[index].orderNumber = number
+                    number -= 1
+                }
             }
         }
       

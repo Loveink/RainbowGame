@@ -22,7 +22,8 @@ enum Colors {
         static let orange = UIColor(named: "orangeCard")!
         static let brown = UIColor(named: "brownCard")!
     }
-    
+    static let background = UIColor(named: "background")!
+    static let mainText = UIColor(named: "MainText")!
     static let black = UIColor(named: "BlackPrimary")!
     static let gray = UIColor(named: "GrayPrimary")!
 }

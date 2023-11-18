@@ -48,12 +48,17 @@ class MainViewController: UIViewController {
 	//MARK: - adding elements to our view
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		view.backgroundColor = .white
+        view.backgroundColor = Colors.background
 
 		addViews()
 		addActions()
 		setupViews()		
+        
+        settingsButton.tintColor = Colors.mainText
+        rulesButton.tintColor = Colors.mainText
 	}
+    
+    
 	
 	func addViews() {
 		view.addSubview(newGameButton)

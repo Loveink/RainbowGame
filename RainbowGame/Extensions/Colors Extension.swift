@@ -47,4 +47,8 @@ extension UIColor {
     func getPurpleColor() -> UIColor {
         return UIColor(red: 148/255, green: 74/255, blue: 156/255, alpha: 1)
     }
+    
+    func getBackgroundColor() -> UIColor {
+        return UIColor(red: 166/255, green: 228/255, blue: 251/255, alpha: 1)
+    }
 }

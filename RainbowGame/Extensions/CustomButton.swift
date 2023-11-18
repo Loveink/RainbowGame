@@ -56,7 +56,7 @@ class CustomButton: UIButton {
 		self.layer.shadowOpacity = 0.7
 		self.layer.shadowRadius = 3.5
 		self.layer.masksToBounds = false
-		self.layer.cornerRadius = 10
+		self.layer.cornerRadius = 25
 		self.translatesAutoresizingMaskIntoConstraints = false
 	}	
 }
