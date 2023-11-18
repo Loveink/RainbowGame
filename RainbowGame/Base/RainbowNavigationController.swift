@@ -17,7 +17,8 @@ final class RainbowNavigationController: UINavigationController {
     
     private func configure() {
         let appearance = UINavigationBarAppearance()
-        appearance.configureWithTransparentBackground()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = Colors.Background.lvl1
         
         appearance.titleTextAttributes = [.font: UIFont.systemFont(ofSize: 30)]
         

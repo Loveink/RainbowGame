@@ -1,21 +1,20 @@
 //
-//  SettingTimeCell.swift
+//  SettingsSegmentCell.swift
 //  RainbowGame
 //
-//  Created by Наталья Миронова on 14.11.2023.
+//  Created by Наталья Миронова on 17.11.2023.
 //
 
 import UIKit
 
-final class SettingTimeCell: UICollectionViewCell {
+final class SettingsSegmentCell: SettingsCollectionCellView {
     
-    static let id = "settingTimeCell"
+    static let id = "SettingsSegmentCell"
     
-    var sliderDidChange: ((Int) -> Void)?
+    var segmentedControlValueChanged: ((Int) -> Void)?
     
     private let titleLabel = UILabel()
-    private let slider = UISlider()
-    private let valueLabel = UILabel()
+    private let segmentedControl = UISegmentedControl()
     
     private let stack = UIStackView()
     
@@ -30,40 +29,37 @@ final class SettingTimeCell: UICollectionViewCell {
     }
     
     private func setupUI() {
-        
-        slider.minimumValue = 1
-        slider.maximumValue = 20
-        valueLabel.text = "\(Int(slider.value))"
-        
         addSubview(stack)
         
-        [titleLabel, slider, valueLabel].forEach { stack.addArrangedSubview($0)}
+        [titleLabel, segmentedControl].forEach { stack.addArrangedSubview($0)}
         
-        stack.axis = .horizontal
+        stack.axis = .vertical
         stack.spacing = 16
         stack.distribution = .fill
         
         stack.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            
             stack.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             stack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             stack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             stack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
         ])
         
-        slider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
+        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
     }
     
-    func configure(with title: String, value: Int) {
+    func configure(title: String, segments: [String], selectedSegment: Int) {
         titleLabel.text = title
-        valueLabel.text = "\(value)"
-        slider.value = Float(value)
+        segments.enumerated().forEach {
+            segmentedControl.insertSegment(withTitle: $1, at: $0, animated: false)
+        }
+        segmentedControl.selectedSegmentIndex = selectedSegment
     }
     
-    @objc private func sliderValueChanged() {
-        valueLabel.text = "\(Int(slider.value))"
-        sliderDidChange?(Int(slider.value))
+    @objc private func segmentedControlValueChanged(_ segmentControl: UISegmentedControl) {
+        segmentedControlValueChanged?(segmentControl.selectedSegmentIndex)
     }
 }
+
+
