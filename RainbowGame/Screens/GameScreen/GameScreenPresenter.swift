@@ -126,7 +126,7 @@ final class GameScreenPresenter: GameScreenOutput {
         let randomColor = self.randomColor
         view?.updateWith(
             .init(
-                backgroundColor: storage.backgroundColor.color,
+                backgroundColor: storage.theme.color,
                 color: .init(
                     text: randomColor.fakeColor.name,
                     textColor: storage.coloredFrame ? .white : randomColor.color,
@@ -139,7 +139,7 @@ final class GameScreenPresenter: GameScreenOutput {
                     } : nil
                 ),
                 wordPosition: storage.wordPosition,
-                speed: "\(gameSpeed)c",
+                speed: "\(gameSpeed)x",
                 speedClosure: {
                     [weak self] in
                     
@@ -148,7 +148,7 @@ final class GameScreenPresenter: GameScreenOutput {
                     self.pause()
                     self.view?.updateGameState(.paused)
                     self.gameSpeed += 1
-                    self.view?.updateSpeed("\(self.gameSpeed)с")
+                    self.view?.updateSpeed("\(self.gameSpeed)x")
                 }
             )
         )

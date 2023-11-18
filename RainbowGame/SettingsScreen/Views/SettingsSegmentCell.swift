@@ -21,7 +21,18 @@ final class SettingsSegmentCell: SettingsCollectionCellView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
-        backgroundColor = .lightGray
+        titleLabel.textColor = Colors.Interface.grayText
+        titleLabel.font = Fonts.text
+        segmentedControl.selectedSegmentTintColor = Colors.Interface.blueText
+        segmentedControl.setTitleTextAttributes([.foregroundColor: Colors.Interface.blue], for: .normal)
+        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+        
+//        segmentedControl.layer.cornerRadius = 15
+
+        
+        backgroundColor = .white
+        layer.cornerRadius = 25
+        
     }
     
     required init?(coder: NSCoder) {
@@ -38,6 +49,8 @@ final class SettingsSegmentCell: SettingsCollectionCellView {
         stack.distribution = .fill
         
         stack.translatesAutoresizingMaskIntoConstraints = false
+        
+        
         
         NSLayoutConstraint.activate([
             stack.topAnchor.constraint(equalTo: topAnchor, constant: 8),

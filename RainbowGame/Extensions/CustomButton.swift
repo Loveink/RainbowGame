@@ -49,7 +49,7 @@ class CustomButton: UIButton {
 	private func setupButton() {
 		self.backgroundColor = customBackgroundColor
 		self.setTitle(customTitle, for: .normal)
-		self.titleLabel?.font = .systemFont(ofSize: 20.0, weight: .medium)
+		self.titleLabel?.font = .boldSystemFont(ofSize: 25)
         self.setTitleColor(customTitleColor, for: .normal)
 		self.layer.shadowColor = customShadowColor
 		self.layer.shadowOffset = CGSize(width: 0.0, height: 2.5)

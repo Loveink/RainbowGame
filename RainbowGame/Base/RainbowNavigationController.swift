@@ -18,16 +18,16 @@ final class RainbowNavigationController: UINavigationController {
     private func configure() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = Colors.Background.lvl1
+        appearance.backgroundColor = Colors.Interface.background
         
-        appearance.titleTextAttributes = [.font: UIFont.systemFont(ofSize: 30)]
+        appearance.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 30), .foregroundColor: Colors.Interface.blueText]
         
         navigationBar.standardAppearance = appearance
         navigationBar.compactAppearance = appearance
         navigationBar.scrollEdgeAppearance = appearance
         navigationBar.compactScrollEdgeAppearance = appearance
         
-        navigationBar.tintColor = Colors.mainText
+        navigationBar.tintColor = Colors.Interface.blueText
     
     }
 }

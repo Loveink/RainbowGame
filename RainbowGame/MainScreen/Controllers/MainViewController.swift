@@ -10,17 +10,20 @@ import UIKit
 class MainViewController: UIViewController {
 	
 	/// three main buttons:
-	var newGameButton = CustomButton(customTitle: "Новая игра",
-                                     customBackgroundColor: .red,
-									 customShadowColor: UIColor.red.cgColor)
+	var newGameButton = CustomButton(customTitle: "НОВАЯ ИГРА",
+                                     customBackgroundColor: Colors.Interface.red,
+                                     customTitleColor: Colors.Interface.darkRed, 
+                                     customShadowColor: Colors.Interface.darkRed.cgColor)
 	
-	var continueButton = CustomButton(customTitle: "Продолжить",
-							   customBackgroundColor: UIColor(red: 47/255, green: 134/255, blue: 183/255, alpha: 1.0),
-							   customShadowColor: UIColor(red: 47/255, green: 134/255, blue: 183/255, alpha: 1.0).cgColor )
+	var continueButton = CustomButton(customTitle: "ПРОДОЛЖИТЬ",
+                                      customBackgroundColor: Colors.Interface.yellow,
+                                      customTitleColor: Colors.Interface.darkYellow,
+                                      customShadowColor: Colors.Interface.darkYellow.cgColor)
 
-	var statisticsButton = CustomButton(customTitle: "Статистика",
-										customBackgroundColor: UIColor(red: 48/255, green: 209/255, blue: 88/255, alpha: 1.0),
-										customShadowColor: UIColor(red: 48/255, green: 209/255, blue: 88/255, alpha: 1.0).cgColor)
+	var statisticsButton = CustomButton(customTitle: "СТАТИСТИКА",
+                                        customBackgroundColor: Colors.Interface.green,
+                                        customTitleColor: Colors.Interface.darkGreen,
+										customShadowColor: Colors.Interface.darkGreen.cgColor)
 	
 	/// two buttons for Settings and Rules
 	var rulesButton = CustomRoundButton(imageName: "questionmark.circle")
@@ -48,14 +51,14 @@ class MainViewController: UIViewController {
 	//MARK: - adding elements to our view
 	override func viewDidLoad() {
 		super.viewDidLoad()
-        view.backgroundColor = Colors.background
+        view.backgroundColor = Colors.Interface.background
 
 		addViews()
 		addActions()
 		setupViews()		
         
-        settingsButton.tintColor = Colors.mainText
-        rulesButton.tintColor = Colors.mainText
+        settingsButton.tintColor = Colors.Interface.blueText
+        rulesButton.tintColor = Colors.Interface.blueText
 	}
     
     

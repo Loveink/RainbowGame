@@ -24,7 +24,7 @@
         
         private let tableView: UITableView = {
             let table = UITableView()
-            table.backgroundColor = UIColor().getLightBlueColor()
+            table.backgroundColor = Colors.Interface.background
             table.separatorStyle = .none
             table.allowsSelection = false
             table.allowsSelectionDuringEditing = false
@@ -36,8 +36,8 @@
         private let clearButton: UIButton = {
             let button = UIButton(type: .system)
             button.setTitle("Очистить Результаты", for: .normal)
-            button.setTitleColor(UIColor(red: 152/255, green: 10/255, blue: 1/255, alpha: 1), for: .normal)
-            button.backgroundColor = UIColor().getRedColor()
+            button.setTitleColor(Colors.Interface.darkRed, for: .normal)
+            button.backgroundColor = Colors.Interface.red
             button.titleLabel?.minimumScaleFactor = 0.5
             button.titleLabel?.adjustsFontSizeToFitWidth = true
             button.layer.cornerRadius = 25
@@ -51,7 +51,7 @@
         private let emptyTableLabel: UILabel = {
             let label = UILabel()
             label.font = .boldSystemFont(ofSize: 25)
-            label.textColor = Colors.mainText
+            label.textColor = Colors.Interface.blueText
             label.textAlignment = .center
             label.numberOfLines = 2
             label.alpha = 0.0
@@ -66,7 +66,7 @@
         override func viewDidLoad() {
             self.title = "Статистика"
             super.viewDidLoad()
-            view.backgroundColor = Colors.background
+            view.backgroundColor = Colors.Interface.background
             orderNumerate()
             setupTableView()
             setupViews()
@@ -81,9 +81,9 @@
         
         private func setupViews() {
             
-            
-            view.addSubview(stackView)
             view.addSubview(emptyTableLabel)
+            view.addSubview(stackView)
+            
             stackView.addSubview(tableView)
         
             stackView.addSubview(clearButton)
@@ -166,7 +166,7 @@
             let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as! ResultCell
             let result = results[indexPath.row]
             cell.configure(with: result)
-            cell.backgroundColor = UIColor().getLightBlueColor()
+            cell.backgroundColor = Colors.Interface.background
             return cell
         }
         

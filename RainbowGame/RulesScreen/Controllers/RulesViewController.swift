@@ -12,19 +12,19 @@ class  RulesViewController: RainbowViewController {
     
     let rulesView = UIView()
     
-    let titleLabel = UILabel.makeLabel(text: "ПРАВИЛА ИГРЫ", font: UIFont.systemFont(ofSize: 30.0, weight: .bold))
+    let titleLabel = UILabel.makeLabel(text: "ПРАВИЛА ИГРЫ", font: Fonts.title, textColor: Colors.Interface.grayText)
     
-   let topMainLabel = UILabel.makeLabel(text: "На экране в случайном месте появляется слово, обозначающее цвет, например: написано «синий»:", font: UIFont.systemFont(ofSize: 18.0, weight: .regular), textAlignment: .natural, numberOfLines: 0)
+    let topMainLabel = UILabel.makeLabel(text: "На экране в случайном месте появляется слово, обозначающее цвет, например: написано «синий»:", font: Fonts.text, textColor: Colors.Interface.grayText, textAlignment: .natural, numberOfLines: 0)
   
-    let aboveleftExampleLabel = UILabel.makeLabel(text: "подложка выключена", font: UIFont.systemFont(ofSize: 13.0, weight: .regular))
+    let aboveleftExampleLabel = UILabel.makeLabel(text: "подложка выключена", font: UIFont.boldSystemFont(ofSize: 12.0), textColor: Colors.Interface.grayText)
     
-    let aboveRightExampleLabel = UILabel.makeLabel(text: "подложка включена", font: UIFont.systemFont(ofSize: 13.0, weight: .regular))
+    let aboveRightExampleLabel = UILabel.makeLabel(text: "подложка включена", font: UIFont.boldSystemFont(ofSize: 12.0), textColor: Colors.Interface.grayText)
 
-    let RightExampleButton = CustomButton(customTitle: "Синий", customBackgroundColor: UIColor(red: 0/255, green: 181/255, blue: 101/255, alpha: 1), customShadowColor: UIColor.black.cgColor)
+    let RightExampleButton = CustomButton(customTitle: "Синий", customBackgroundColor: Colors.Interface.green, customShadowColor: Colors.Interface.darkGreen.cgColor)
 
-    let leftExampleButton = CustomButton(customTitle: "Синий", customBackgroundColor: .clear, customTitleColor: UIColor(red: 0/255, green: 181/255, blue: 101/255, alpha: 1), customShadowColor: UIColor.clear.cgColor)
+    let leftExampleButton = CustomButton(customTitle: "Синий", customBackgroundColor: .clear, customTitleColor: Colors.Interface.green, customShadowColor: UIColor.clear.cgColor)
  
-    let bottomMainLabel = UILabel.makeLabel(text: "Нужно произнести вслух цвет слова (если опция «подложка для букв» выключена) или цвет фона, на котором написано слово (если опция «подложка для букв» включена): говорим «зеленый». \n В игре можно изменять скорость от 1x до 5x. А так же длительность игры.", font: UIFont.systemFont(ofSize: 18.0, weight: .regular), textAlignment: .natural, numberOfLines: 0)
+    let bottomMainLabel = UILabel.makeLabel(text: "Нужно произнести вслух цвет слова (если опция «подложка для букв» выключена) или цвет фона, на котором написано слово (если опция «подложка для букв» включена): говорим «зеленый». \n В игре можно изменять скорость от 1x до 5x. А так же длительность игры.", font: UIFont.boldSystemFont(ofSize: 18.0), textColor: Colors.Interface.grayText, textAlignment: .natural, numberOfLines: 0)
 
     //MARK: - ViewController Life
     override func viewDidLoad() {
@@ -47,11 +47,12 @@ class  RulesViewController: RainbowViewController {
     //MARK: - UI setting
     func setUpUI() {
         
-        view.backgroundColor = Colors.background
+        view.backgroundColor = Colors.Interface.background
         
+        RightExampleButton.layer.cornerRadius = 10
         // setting rules view
-        rulesView.backgroundColor = UIColor(red: 236/255, green: 231/255, blue: 237/255, alpha: 1)
-        rulesView.layer.cornerRadius = 10
+        rulesView.backgroundColor = .white
+        rulesView.layer.cornerRadius = 25
         
         
         rulesView.snp.makeConstraints { make in

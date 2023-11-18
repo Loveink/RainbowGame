@@ -139,7 +139,7 @@ final class GameScreenViewController: RainbowViewController, GameScreenInput {
     }
     
     private func configure() {
-        view.backgroundColor = Colors.background
+        view.backgroundColor = Colors.Interface.background
         
         view.addSubview(speedButton)
         speedButton.snp.makeConstraints {
