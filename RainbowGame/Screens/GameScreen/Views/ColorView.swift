@@ -13,6 +13,7 @@ final class ColorView: UIView {
     struct Model {
         let text: String
         let textColor: UIColor
+        let fontSize: CGFloat
         let frameColor: UIColor?
         let didSelectHandler: (() -> Void)?
     }
@@ -80,7 +81,7 @@ final class ColorView: UIView {
             $0.top.equalToSuperview().inset(Layout.titleInsets.top)
             $0.bottom.equalToSuperview().inset(Layout.titleInsets.bottom)
             $0.leading.greaterThanOrEqualToSuperview().inset(Layout.titleInsets.left)
-            $0.trailing.lessThanOrEqualTo(markCircle.snp.leading).inset(Layout.titleInsets.right)
+            $0.trailing.lessThanOrEqualTo(markCircle.snp.leading).inset(-Layout.titleInsets.right)
             $0.centerX.equalToSuperview().priority(.medium)
         }
         
@@ -109,6 +110,7 @@ final class ColorView: UIView {
     func update(_ model: Model) {
         titleLabel.text = model.text
         titleLabel.textColor = model.textColor
+        titleLabel.font = titleLabel.font.withSize(model.fontSize)
         selectHandler = model.didSelectHandler
         markCircle.isHidden = model.didSelectHandler == nil
         markView.isHidden = true

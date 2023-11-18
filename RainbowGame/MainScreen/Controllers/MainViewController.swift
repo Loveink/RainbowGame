@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: RainbowViewController {
+class MainViewController: UIViewController {
 	
 	/// three main buttons:
 	var newGameButton = CustomButton(customTitle: "Новая игра",
@@ -138,7 +138,7 @@ class MainViewController: RainbowViewController {
 			rulesButton.heightAnchor.constraint(equalToConstant: 60),
 			
 			rainbowImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-			rainbowImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 120),
+            rainbowImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 120),
 			
 			nameGame.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 			nameGame.bottomAnchor.constraint(equalTo: newGameButton.topAnchor, constant: -80)

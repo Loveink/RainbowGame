@@ -31,6 +31,7 @@ extension GameScreen {
     struct Color {
         let text: String
         let textColor: UIColor
+        let fontSize: CGFloat
         let frame: Frame?
         let didSelectHandler: (() -> Void)?
     }
@@ -39,6 +40,7 @@ extension GameScreen {
         let color: UIColor
     }
     struct ViewModel {
+        let backgroundColor: UIColor
         let color: Color?
         let wordPosition: GameWordPosition
         let speed: String?
