@@ -21,7 +21,13 @@ final class SettingsSwitchCell: SettingsCollectionCellView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
-        backgroundColor = .lightGray
+        titleLabel.font = Fonts.text
+        titleLabel.textColor = Colors.Interface.grayText
+        switchControl.onTintColor = Colors.Interface.blueText
+        
+        
+        backgroundColor = .white
+        layer.cornerRadius = 25
     }
     
     required init?(coder: NSCoder) {

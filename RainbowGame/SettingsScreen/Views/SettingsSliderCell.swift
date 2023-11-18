@@ -22,7 +22,14 @@ final class SettingsSliderCell: SettingsCollectionCellView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
-        backgroundColor = .lightGray
+        slider.tintColor = Colors.Interface.blueText
+        
+        titleLabel.font = Fonts.text
+        valueLabel.font = Fonts.text
+        titleLabel.textColor = Colors.Interface.grayText
+        valueLabel.textColor = Colors.Interface.grayText
+        backgroundColor = .white
+        layer.cornerRadius = 25
     }
     
     required init?(coder: NSCoder) {
