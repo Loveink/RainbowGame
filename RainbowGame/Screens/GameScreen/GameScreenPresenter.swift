@@ -139,7 +139,7 @@ final class GameScreenPresenter: GameScreenOutput {
                     } : nil
                 ),
                 wordPosition: storage.wordPosition,
-                speed: "\(gameSpeed)x",
+                speed: "\(gameSpeed)c",
                 speedClosure: {
                     [weak self] in
                     
@@ -148,7 +148,7 @@ final class GameScreenPresenter: GameScreenOutput {
                     self.pause()
                     self.view?.updateGameState(.paused)
                     self.gameSpeed += 1
-                    self.view?.updateSpeed("\(self.gameSpeed)x")
+                    self.view?.updateSpeed("\(self.gameSpeed)c")
                 }
             )
         )

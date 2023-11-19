@@ -158,8 +158,8 @@ final class SettingsViewController: RainbowViewController, UICollectionViewDataS
         collectionView.register(SettingsSegmentCell.self, forCellWithReuseIdentifier: SettingsSegmentCell.id)
         collectionView.register(SettingsSliderCell.self, forCellWithReuseIdentifier: SettingsSliderCell.id)
         collectionView.register(SettingsSwitchCell.self, forCellWithReuseIdentifier: SettingsSwitchCell.id)
-		collectionView.register(SettingFontSizeCell.self, forCellWithReuseIdentifier: SettingFontSizeCell.id)
-		collectionView.register(SettingColorLettersCell.self, forCellWithReuseIdentifier: SettingColorLettersCell.id)
+        collectionView.register(SettingFontSizeCell.self, forCellWithReuseIdentifier: SettingFontSizeCell.id)
+        collectionView.register(SettingColorLettersCell.self, forCellWithReuseIdentifier: SettingColorLettersCell.id)
     }
     
     private func configureLayout() -> UICollectionViewLayout {
@@ -184,5 +184,4 @@ extension SettingsViewController: UICollectionViewDelegateFlowLayout {
             return defaultSize
         }
     }
-    
 }
