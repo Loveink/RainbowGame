@@ -1,4 +1,7 @@
 # Rainbow Game
+<img src="https://github.com/Loveink/RainbowGame/blob/develop/image.png" width="900">
+
+---
 
 <p align="left"> 
 <a href="https://swift.org">
