@@ -12,6 +12,7 @@ final class GameScreenPresenter: GameScreenOutput {
     weak var view: GameScreenInput?
     
     private let storage: GameStorage
+    private weak var delegate: GameScreenDelegate?
     private lazy var colors: [GameColor] = storage.colors
     private lazy var roundTime: Int = storage.gameTime
     private lazy var colorChangeTime = storage.cardChangeSpeed
@@ -38,8 +39,9 @@ final class GameScreenPresenter: GameScreenOutput {
         return randomColor
     }
     
-    init(storage: GameStorage) {
+    init(storage: GameStorage, delegate: GameScreenDelegate?) {
         self.storage = storage
+        self.delegate = delegate
     }
     
     deinit {
@@ -63,17 +65,22 @@ final class GameScreenPresenter: GameScreenOutput {
     }
     
     func pause() {
-        guard let timer else {
+        guard let timer, let view else {
             return
         }
         timer.invalidate()
         self.timer = nil
-        view?.updateGameState(.paused)
+        view.updateGameState(.paused)
+        delegate?.didTapPause(view)
     }
     
     private func start(new: Bool) {
         
-        view?.updateGameState(.plaing)
+        guard let view else {
+            return
+        }
+        delegate?.didTapPlay(view)
+        view.updateGameState(.plaing)
         
         timer = Timer.scheduledTimer(
             withTimeInterval: 1.0,
@@ -92,7 +99,7 @@ final class GameScreenPresenter: GameScreenOutput {
         roundPoints = 0
         remaningTime = roundTime
         interColorTime = colorChangeTime
-        view?.updateTitle(formattedTime(time: remaningTime))
+        view.updateTitle(formattedTime(time: remaningTime))
         updateColor()
     }
     
