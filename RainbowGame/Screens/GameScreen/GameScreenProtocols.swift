@@ -19,3 +19,8 @@ protocol GameScreenOutput: AnyObject {
     func play()
     func pause()
 }
+
+protocol GameScreenDelegate: AnyObject {
+    func didTapPlay(_ vc: GameScreenInput)
+    func didTapPause(_ vc: GameScreenInput)
+}

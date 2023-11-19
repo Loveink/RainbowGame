@@ -38,6 +38,7 @@ final class GameScreenViewController: RainbowViewController, GameScreenInput {
         super.viewDidLoad()
 
         configure()
+        presenter.activate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,8 +51,6 @@ final class GameScreenViewController: RainbowViewController, GameScreenInput {
             navigationController?.navigationBar.standardAppearance = appearance
             navigationController?.navigationBar.scrollEdgeAppearance = appearance
         }
-        
-        presenter.activate()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

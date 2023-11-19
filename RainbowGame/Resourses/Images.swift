@@ -11,5 +11,5 @@ enum Images {
     static let arrowLeft = UIImage(named: "ArrowLeft")!
     static let pause = UIImage(named: "Pause")!
     static let mark = UIImage(named: "Mark")!
-    static let play = UIImage(named: "play")!
+    static let play = UIImage(named: "Play")!
 }

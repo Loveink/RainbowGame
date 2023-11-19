@@ -11,8 +11,8 @@ final class GameScreen {
     
     weak var controller: UIViewController?
     
-    func build() -> UIViewController {
-        let presenter = GameScreenPresenter(storage: StorageService())
+    func build(delegate: GameScreenDelegate?) -> UIViewController {
+        let presenter = GameScreenPresenter(storage: StorageService(), delegate: delegate)
         let controller = GameScreenViewController()
         controller.presenter = presenter
         presenter.screen = self
